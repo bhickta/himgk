@@ -30,10 +30,14 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Installing latest python, pip, obsidianhtml
+      - name: Installing latest python, pip
         run: |
-          python -m pip install --upgrade pip
-          pip install obsidianhtml --upgrade
+          python -m pip install --upgrade 
+      -name: Installing latest obsidian and cleaning up
+        run: |
+          git clone https://github.com/obsidian-html/obsidian-html
+          sed -i 's/obsidian-light/HimGk-light/g' obsidian-html/obsidianhtml/src/html/themes/popup.html
+          sed -i 's/obsidian-dark/Dark/g' obsidian-html/obsidianhtml/src/html/themes/popup.html
 
       - name: Cloning your repo containing obsidian vault and config.yaml - with 'master branch'
         run: |
