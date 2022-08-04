@@ -43,6 +43,7 @@ exclude_subfolders:
   - ".trash"
   - ".DS_Store"
   - ".git"
+  - ".github"
 
 # Safety feature: make a copy of the provided vault, and operate on that, so that bugs are less likely to affect the vault data. 
 # Should be fine to turn off if copying the vault takes too long / disk space is too limited.
@@ -67,7 +68,7 @@ md_source_host_url: ''
 
 # Will be inputted into the Html template as page title
 # Not used anywhere else atm.
-site_name: 'Obsidian-Html/Notes'
+site_name: 'HimGk'
 
 # Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/
 # use '/html_prefix' (prepend slash, no slash at the end)
