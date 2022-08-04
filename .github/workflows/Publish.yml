@@ -35,7 +35,7 @@ jobs:
           git clone https://github.com/obsidian-html/obsidian-html
           sed -i 's/obsidian-light/HimGk-light/g' obsidian-html/obsidianhtml/src/html/themes/popup.html
           sed -i 's/obsidian-dark/Dark/g' obsidian-html/obsidianhtml/src/html/themes/popup.html
-          pip install . --upgrade
+          pip install obsidian-html/. --upgrade
 
       - name: Cloning your repo containing obsidian vault and config.yaml - with 'master branch'
         run: |
