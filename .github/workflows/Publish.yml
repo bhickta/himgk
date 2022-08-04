@@ -33,7 +33,7 @@ jobs:
       - name: Installing latest python, pip
         run: |
           python -m pip install --upgrade 
-      -name: Installing latest obsidian and cleaning up
+      - name: Installing latest obsidian and cleaning up
         run: |
           git clone https://github.com/obsidian-html/obsidian-html
           sed -i 's/obsidian-light/HimGk-light/g' obsidian-html/obsidianhtml/src/html/themes/popup.html
