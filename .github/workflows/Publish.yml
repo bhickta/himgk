@@ -63,6 +63,11 @@ jobs:
         run: |
           cd himgk/output
           mv html docs
+      
+      - name: removing unwanted links
+        run: |
+          sed -i 's/^.+config\.yaml$//g' himgk/output/docs/index.html
+          sed -i 's/^.+template\.html$//g' himgk/output/docs/index.html
          
       - name: Push to gh-pages branch --force
         # You may pin to the exact commit or the version.
