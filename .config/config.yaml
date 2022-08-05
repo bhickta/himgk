@@ -84,10 +84,22 @@ html_custom_inclusions: []
 html_custom_footer_inclusions: []
 
 navbar_links:
-  - About us - '/docs/index.html'
-  - Contact us - ''
-  - Privacy policy - ''
-
+  - name: Home
+    link: index.html
+  - name: About
+    link: General Information/About ObsidianHtml.html  
+  - name: Quickstart
+    link: Instructions/Quickstart.html
+  - name: Styling
+    link: Configurations/Styling/Styling.html    
+  - name: Modes
+    link: Configurations/Modes.html
+  - name: Features
+    link: Configurations/Features.html
+  - name: Configurations
+    link: Configurations/Configuration Options.html
+  - name: News
+    link: News.html    
 ##########################################################################
 #                    OPTIONAL BEHAVIOR / FEATURES                        #
 ##########################################################################
