@@ -83,7 +83,17 @@ html_template_path_str: ''
 html_custom_inclusions: []
 html_custom_footer_inclusions: []
 
-navbar_links: []
+navbar_links: 
+  - name: Home
+    link: index.html
+  - name: About
+    link: AdminHimGK/About.html  
+  - name: Disclaimer
+    link: AdminHimGK/Disclaimer.html
+  - name: Privacy Policy
+    link: AdminHimGK/Privacy Policy.html    
+  - name: Contact
+    link: AdminHimGK/Contact.html
 
 ##########################################################################
 #                    OPTIONAL BEHAVIOR / FEATURES                        #
