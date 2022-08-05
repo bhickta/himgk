@@ -36,27 +36,24 @@
                                 <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
                                         ≡
                                 </div>
-                                <div class="site-logo left new_nav">
-                                        <a href="{html_url_prefix}/index.html"><img src="https://imgur.com/oeGq228.png"
-                                                        style="width:80px;height:80px</a></div>                        
                                 <div id=" navbar" class="navbar requires_js">
-                                                {{navbar_links}}
-                                                <div class="icon-tray">
-                                                        {theme_button}
-                                                        {search_button}
-                                                        {graph_button}
-                                                        {dirtree_button}
-                                                        {tags_page_button}
-                                                        {rss_button}
-                                                </div>
-                                                <div style="display: flex; flex-direction:column">
-                                                        <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">
-                                                                Toggle
-                                                                Directory Tree Pane</div>
-                                                        <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">
-                                                                Toggle
-                                                                Table of Contents Pane</div>
-                                                </div>
+                                        {{navbar_links}}
+                                        <div class="icon-tray">
+                                                {theme_button}
+                                                {search_button}
+                                                {graph_button}
+                                                {dirtree_button}
+                                                {tags_page_button}
+                                                {rss_button}
+                                        </div>
+                                        <div style="display: flex; flex-direction:column">
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">
+                                                        Toggle
+                                                        Directory Tree Pane</div>
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">
+                                                        Toggle
+                                                        Table of Contents Pane</div>
+                                        </div>
                                 </div>
                         </div>
                         {theme_popup}
@@ -95,9 +92,14 @@
                                         <li style="padding-left:1em; padding-right:1em">
                                                 <a href="/AdminHimGK/Contact">Contact</a>
                                         </li>
-                                        <li style="padding-left:1em; padding-right:1em">
-                                                ©&nbsp;2022, HimGK's - All rights reserved.
+                                        <li style="padding-left:1em; padding-right:1em"></li>
+                                        ©&nbsp;2022, HimGK's - All rights reserved.
                                         </li>
+                                        <li style="  position: absolute;top: 0%;padding-left:40em; padding-right:1em">
+                                                <a href="{html_url_prefix}/index.html"><img
+                                                                src="https://imgur.com/oeGq228.png" style="width:100px;height:100px</a>
+                                        </li>
+
                                 </ul>
                         </div>
 
@@ -105,15 +107,15 @@
 
 
                 </div>
-                <div class="container_filler">
-                </div>
-                <div id="right_pane" class="right_pane active">
-                        <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
-                        <div id="right_pane_content" class="right_pane_content">
-                                {right_pane_content}
+                <div class=" container_filler">
+                        </div>
+                        <div id="right_pane" class="right_pane active">
+                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                                <div id="right_pane_content" class="right_pane_content">
+                                        {right_pane_content}
+                                </div>
                         </div>
                 </div>
-        </div>
         </div>
 
         <script>
