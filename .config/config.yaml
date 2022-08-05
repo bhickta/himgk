@@ -69,8 +69,7 @@ md_source_host_url: ''
 
 # Will be inputted into the Html template as page title
 # Not used anywhere else atm.
-site_name: <html><a href="{html_url_prefix}/index.html"><img src="https://imgur.com/oeGq228.png"style="width:100px;height:100px;></a><html>
-
+site_name: 'HimGK'
 
 # Use when deploying to https://mydomain.com/html_prefix/ instead of https://mydomain.com/
 # use '/html_prefix' (prepend slash, no slash at the end)
