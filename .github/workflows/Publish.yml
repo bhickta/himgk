@@ -60,6 +60,10 @@ jobs:
           ls -la
           python -m obsidianhtml -i .config/config.yaml
 
+      - name: Adding custom.css
+        run: |
+          mv .config/custom.css himgk/output/html/obs.html/static/
+
       - name: Rename - rename html to docs
         run: |
           cd himgk/output
