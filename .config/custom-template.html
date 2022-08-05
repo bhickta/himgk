@@ -28,7 +28,8 @@
                 document.getElementById('antiflash').style.display = 'block';
         </script>
         {search_html}
-        <div id=" page_holder" class="flex_col">
+
+        <div id="page_holder" class="flex_col">
                 <div id="header" class="header">
                         <div id="header_flex" class="flex_row">
                                 <a href="{html_url_prefix}/index.html" id="homelink"
@@ -36,7 +37,7 @@
                                 <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
                                         ≡
                                 </div>
-                                <div id=" navbar" class="navbar requires_js">
+                                <div id="navbar" class="navbar requires_js">
                                         {{navbar_links}}
                                         <div class="icon-tray">
                                                 {theme_button}
@@ -47,11 +48,9 @@
                                                 {rss_button}
                                         </div>
                                         <div style="display: flex; flex-direction:column">
-                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">
-                                                        Toggle
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle
                                                         Directory Tree Pane</div>
-                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">
-                                                        Toggle
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle
                                                         Table of Contents Pane</div>
                                         </div>
                                 </div>
@@ -60,8 +59,7 @@
                 </div>
                 <div class="flex_row">
                         <div id="left_pane" class="left_pane active">
-                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x
-                                </div>
+                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
                                 <div id="left_pane_content" class="left_pane_content">
                                         {left_pane_content}
                                 </div>
@@ -69,20 +67,46 @@
                         <div class="container">
                                 {content}
                                 <!-- end content -->
-                                <!--------->
-
-
                         </div>
+
+                        <!-- Custom Footer -->
+                        <style>
+                                ul#list-inline-footer li {
+                                        display: inline;
+                                }
+                        </style>
+
+                        <ul id="list-inline-footer">
+                                <li style="padding-left:1em; padding-right:1em">
+                                        <a href="/AdminHimGK/About">About</a>
+                                </li>
+                                <li style="padding-left:1em; padding-right:1em">
+                                        <a href="/AdminHimGK/Privacy Policy">Privacy Policy</a>
+                                </li>
+                                <li style="padding-left:1em; padding-right:1em">
+                                        <a href="/AdminHimGK/Disclaimer">Disclaimer</a>
+                                </li>
+                                <li style="padding-left:1em; padding-right:1em">
+                                        <a href="/AdminHimGK/Contact">Contact</a>
+                                </li>
+                                <li style="padding-left:1em; padding-right:1em"></li>
+                                ©&nbsp;2022, HimGK's - All rights reserved.
+                                </li>
+                                <li style="padding-left:40em; padding-right:1em">
+                                        <a href="{html_url_prefix}/index.html"><img src="https://imgur.com/oeGq228.png"
+                                                        style="width:100px;height:100px;></a>
+                                        </li>
+                                </ul>
+
                         <div class=" container_filler">
-                        </div>
-                        <div id="right_pane" class="right_pane active">
-                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x
-                                </div>
-                                <div id="right_pane_content" class="right_pane_content">
-                                        {right_pane_content}
-                                </div>
+                </div>
+                <div id="right_pane" class="right_pane active">
+                        <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                        <div id="right_pane_content" class="right_pane_content">
+                                {right_pane_content}
                         </div>
                 </div>
+        </div>
         </div>
 
         <script>
@@ -162,9 +186,8 @@
                 }
 
                 function save_panel_folding_state(header, active) {
-                        localStorage.setItem('pane_folding_state_' + panel_folding_get_panel_name(header),
-                                Number(
-                                        active));
+                        localStorage.setItem('pane_folding_state_' + panel_folding_get_panel_name(header), Number(
+                                active));
                 }
 
                 function load_panel_folding_state(panel_name) {
@@ -225,13 +248,15 @@
                 init_pane_folding(document.getElementById('right_pane_fold_header'));
 
                 document.getElementById('left_pane_toggle_nav').addEventListener('click',
-                        handle_toggle_side_bar_button);
+                handle_toggle_side_bar_button);
                 document.getElementById('right_pane_toggle_nav').addEventListener('click',
                         handle_toggle_side_bar_button);
         </script>
 
         {footer_js_inclusions}
         {dynamic_footer_includes}
+
+
 
 </body>
 
