@@ -80,9 +80,10 @@ html_url_prefix: ''
 html_template_path_str: '.config/custom-template.html'
 
 # Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
-html_custom_inclusions: []
+html_custom_inclusions:
 html_custom_footer_inclusions:
   - <html> <ul id="list-inline-footer"> <li id="list-footer"> <a href="/AdminHimGK/About">About</a> </li> <li id="list-footer"> <a href="/AdminHimGK/Privacy Policy">Privacy Policy</a> </li> <li id="list-footer"> <a href="/AdminHimGK/Disclaimer">Disclaimer</a> </li> <li id="list-footer"> <a href="/AdminHimGK/Contact">Contact</a> </li> <li id="list-footer"> ©&nbsp;2022, HimGK's - All rights reserved. </li> </ul>  </html>
+  - <html><a href="{html_url_prefix}/index.html"><img id="log" src="https://imgur.com/oeGq228.png"style="width:100px;height:100px;></a><html>
   - <link rel="stylesheet" href="/obs.html/static/custom.css" />
 navbar_links: [] 
 
