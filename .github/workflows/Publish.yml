@@ -56,7 +56,7 @@ jobs:
       - name: Access cloned repository content
         run: |
           cd himgk
-          python -m obsidianhtml -i config.yaml
+          python -m obsidianhtml -i \.config/config.yaml
           ls -la
 
       - name: Rename - rename html to docs
@@ -64,12 +64,12 @@ jobs:
           cd himgk/output
           mv html docs
       
-      - name: removing unwanted links
-        run: |
-          cd himgk/output/docs
-          ls
-          sed -i 's/^.+config\.yaml.+$//g' index.html
-          cat index.html
+      # - name: removing unwanted links
+      #   run: |
+      #     cd himgk/output/docs
+      #     ls
+      #     sed -i 's/^.+config\.yaml.+$//g' index.html
+      #     cat index.html
          
       - name: Push to gh-pages branch --force
         # You may pin to the exact commit or the version.
