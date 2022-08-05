@@ -28,18 +28,18 @@
                 document.getElementById('antiflash').style.display = 'block';
         </script>
         {search_html}
-        <div class="site-logo left new_nav">
-                <a href="{html_url_prefix}/index.html"><img src="https://imgur.com/oeGq228.png" style="width:80px;height:80px</a></div>
         <div id=" page_holder" class="flex_col">
-                        <div id="header" class="header">
-                                <div id="header_flex" class="flex_row">
-                                        <a href="{html_url_prefix}/index.html" id="homelink"
-                                                title="Clear screen and go to homepage">{title}</a>
-                                        <div id="menu_toggle_button" class="navbar-button requires_js"
-                                                onclick="toggle_menu()">
-                                                ≡
-                                        </div>
-                                        <div id="navbar" class="navbar requires_js">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="{html_url_prefix}/index.html" id="homelink"
+                                        title="Clear screen and go to homepage">{title}</a>
+                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                                        ≡
+                                </div>
+                                <div class="site-logo left new_nav">
+                                        <a href="{html_url_prefix}/index.html"><img src="https://imgur.com/oeGq228.png"
+                                                        style="width:80px;height:80px</a></div>                        
+                                <div id=" navbar" class="navbar requires_js">
                                                 {{navbar_links}}
                                                 <div class="icon-tray">
                                                         {theme_button}
@@ -57,62 +57,62 @@
                                                                 Toggle
                                                                 Table of Contents Pane</div>
                                                 </div>
-                                        </div>
-                                </div>
-                                {theme_popup}
-                        </div>
-                        <div class="flex_row">
-                                <div id="left_pane" class="left_pane active">
-                                        <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x
-                                        </div>
-                                        <div id="left_pane_content" class="left_pane_content">
-                                                {left_pane_content}
-                                        </div>
-                                </div>
-                                <div class="container">
-                                        {content}
-                                        <!-- end content -->
-
-                                        <!-- Custom added html -->
-
-                                        <!-- Custom Footer -->
-                                        <style>
-                                                ul#list-inline-footer li {
-                                                        display: inline;
-                                                }
-                                        </style>
-
-                                        <ul id="list-inline-footer">
-                                                <li style="padding-left:1em; padding-right:1em">
-                                                        <a href="/AdminHimGK/About">About</a>
-                                                </li>
-                                                <li style="padding-left:1em; padding-right:1em">
-                                                        <a href="/AdminHimGK/Privacy Policy">Privacy Policy</a>
-                                                </li>
-                                                <li style="padding-left:1em; padding-right:1em">
-                                                        <a href="/AdminHimGK/Disclaimer">Disclaimer</a>
-                                                </li>
-                                                <li style="padding-left:1em; padding-right:1em">
-                                                        <a href="/AdminHimGK/Contact">Contact</a>
-                                                </li>
-                                                <li style="padding-left:1em; padding-right:1em">
-                                                        ©&nbsp;2022, HimGK's - All rights reserved.
-                                                </li>
-                                        </ul>
-                                </div>
-
-                                <!--------->
-
-
-                        </div>
-                        <div class="container_filler">
-                        </div>
-                        <div id="right_pane" class="right_pane active">
-                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
-                                <div id="right_pane_content" class="right_pane_content">
-                                        {right_pane_content}
                                 </div>
                         </div>
+                        {theme_popup}
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane" class="left_pane active">
+                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x
+                                </div>
+                                <div id="left_pane_content" class="left_pane_content">
+                                        {left_pane_content}
+                                </div>
+                        </div>
+                        <div class="container">
+                                {content}
+                                <!-- end content -->
+
+                                <!-- Custom added html -->
+
+                                <!-- Custom Footer -->
+                                <style>
+                                        ul#list-inline-footer li {
+                                                display: inline;
+                                        }
+                                </style>
+
+                                <ul id="list-inline-footer">
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/About">About</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/Privacy Policy">Privacy Policy</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/Disclaimer">Disclaimer</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/Contact">Contact</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                ©&nbsp;2022, HimGK's - All rights reserved.
+                                        </li>
+                                </ul>
+                        </div>
+
+                        <!--------->
+
+
+                </div>
+                <div class="container_filler">
+                </div>
+                <div id="right_pane" class="right_pane active">
+                        <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                        <div id="right_pane_content" class="right_pane_content">
+                                {right_pane_content}
+                        </div>
+                </div>
         </div>
         </div>
 
