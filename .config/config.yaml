@@ -77,11 +77,35 @@ html_url_prefix: ''
 
 # Provide the fullpath to a template file to use instead of standard template. 
 # Note that this file must contain at least "{content}" somewhere in the page.
-html_template_path_str: '.config/custom-template.html'
+html_template_path_str: ''
 
 # Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
 html_custom_inclusions: []
-html_custom_footer_inclusions: []
+html_custom_footer_inclusions:
+  - html: "<style>
+                                        ul#list-inline-footer li {
+                                                display: inline;
+                                        }
+                                </style>
+
+                                <ul id="list-inline-footer">
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/About">About</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/Privacy Policy">Privacy Policy</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/Disclaimer">Disclaimer</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                <a href="/AdminHimGK/Contact">Contact</a>
+                                        </li>
+                                        <li style="padding-left:1em; padding-right:1em">
+                                                ©&nbsp;2022, HimGK's - All rights reserved.
+                                        </li>
+                                </ul>
+                        </div>"
 
 navbar_links: [] 
 
@@ -136,7 +160,7 @@ toggles:
       layout: documentation               # documentation, tabs, minimal
       max_note_width: 120rem              # not supported for layout: tabs
       add_toc: True                       # add "[TOC]" (Table of Contents) when missing
-      toc_pane: True                      # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
+      toc_pane: False                      # removes table of contents from the note and puts it in the right pane (not supported for layout:tabs)
       flip_panes: False                   # switch right and left pane around. (does nothing unless in documentation layout.)
       add_dir_list: True                  # show directory contents in one of the panes (only documentation layout)
       accent_color: '65, 76, 253'
