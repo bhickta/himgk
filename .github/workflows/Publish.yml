@@ -40,12 +40,20 @@ jobs:
           sed -i 's/obsidian-dark/Dark/g' obsidian-html/obsidianhtml/src/html/themes/popup.html
           pip install obsidian-html/. --upgrade
 
-      - name: Cloning your repo containing obsidian vault and config.yaml - with 'master branch'
-        run: |
-          # config.yaml must have right relative path to obsidian_folder_path_str: and obsidian_entrypoint_path_str:
-          git clone git@github.com:gpQ4utjefs/himgk.git
-          cd himgk
-          python -m obsidianhtml -i config.yaml
+      # - name: Cloning your repo containing obsidian vault and config.yaml - with 'master branch'
+      #   run: |
+      #     # config.yaml must have right relative path to obsidian_folder_path_str: and obsidian_entrypoint_path_str:
+      #     git clone git@github.com:gpQ4utjefs/himgk.git
+      #     cd himgk
+      #     python -m obsidianhtml -i config.yaml
+
+      - name: Clone GuillaumeFalourd/formulas-training PRIVATE repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2
+        with:
+          owner: 'gpQ4utjefs'
+          repository: 'himgk'
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+        run: ls
           
       - name: Rename - rename html to docs
         run: |
