@@ -52,7 +52,7 @@ jobs:
         with:
           owner: 'gpQ4utjefs'
           repository: 'himgk'
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          access-token: ${{ secrets.GithubToken }}
           run: ls
           
       - name: Rename - rename html to docs
