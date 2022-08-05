@@ -56,7 +56,7 @@ jobs:
       - name: Access cloned repository content
         run: |
           cd himgk
-          python -m obsidianhtml -i .\.config\config.yaml
+          python -m obsidianhtml -i .\.config\/config.yaml
 
       - name: Rename - rename html to docs
         run: |
