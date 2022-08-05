@@ -14,8 +14,6 @@
 
         <!-- Includes -->
         {dynamic_includes}
-        {footer_js_inclusions}
-        {dynamic_footer_includes}
 
         <!-- Onload tweaks -->
         <script>
@@ -68,16 +66,9 @@
                         </div>
                         <div class="container">
                                 {content}
-                                <!-- end content -->
-
-                                <!-- Custom added html -->
-
-                                <!-- Custom Footer -->
-    
-
-                        <!--------->
-
-
+                                {footer_js_inclusions}
+                                {dynamic_footer_includes}
+                                <!-- end content -->            
                 </div>
                 <div class="container_filler">
                 </div>
