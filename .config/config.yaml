@@ -77,7 +77,7 @@ html_url_prefix: ''
 
 # Provide the fullpath to a template file to use instead of standard template. 
 # Note that this file must contain at least "{content}" somewhere in the page.
-html_template_path_str: '.config/custom-template.html'
+html_template_path_str: ''
 
 # Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
 html_custom_inclusions:
