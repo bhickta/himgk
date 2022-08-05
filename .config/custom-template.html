@@ -12,11 +12,6 @@
         <!-- Set title -->
         <title>{title}</title>
 
-        <!-- Boostrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-                integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-                crossorigin="anonymous">
-
         <!-- Includes -->
         {dynamic_includes}
 
@@ -42,27 +37,23 @@
                                 <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
                                         ≡
                                 </div>
-                                <nav class="navbar navbar-expand-lg bg-light">
-                                        <div class="container-fluid">
-                                                {{navbar_links}}
-                                                <div class="icon-tray">
-                                                        {theme_button}
-                                                        {search_button}
-                                                        {graph_button}
-                                                        {dirtree_button}
-                                                        {tags_page_button}
-                                                        {rss_button}
-                                                </div>
-                                                <div style="display: flex; flex-direction:column">
-                                                        <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">
-                                                                Toggle
-                                                                Directory Tree Pane</div>
-                                                        <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">
-                                                                Toggle
-                                                                Table of Contents Pane</div>
-                                                </div>
+                                <div id="navbar" class="navbar requires_js">
+                                        {{navbar_links}}
+                                        <div class="icon-tray">
+                                                {theme_button}
+                                                {search_button}
+                                                {graph_button}
+                                                {dirtree_button}
+                                                {tags_page_button}
+                                                {rss_button}
                                         </div>
-                                </nav>
+                                        <div style="display: flex; flex-direction:column">
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle
+                                                        Directory Tree Pane</div>
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle
+                                                        Table of Contents Pane</div>
+                                        </div>
+                                </div>
                         </div>
                         {theme_popup}
                 </div>
@@ -75,20 +66,30 @@
                         </div>
                         <div class="container">
                                 {content}
-                                <div class="card text-center">
-                                        <div class="card-header">
-                                                Featured
-                                        </div>
-                                        <div class="card-body">
-                                                <h5 class="card-title">Special title treatment</h5>
-                                                <p class="card-text">With supporting text below as a natural lead-in to
-                                                        additional content.</p>
-                                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                                        </div>
-                                        <div class="card-footer text-muted">
-                                                2 days ago
+                                <!-- end content -->
+
+                                <!-- Custom added html -->
+                                <!-- Custom Footer -->
+                                <div class="footer-copyright section" id="footer-copyright" name="Footer Attribution">
+                                        <div class="widget HTML" data-version="2" id="HTML33">
+                                                <div class="widget-content"
+                                                        style="visibility:visible!important;opacity:1!important;position:relative!important;z-index:1!important;text-indent: 1px!important;font-size:14px!important;color:#686868!important;margin:0!important;">
+                                                        <span class="copyright-text widget"
+                                                                style="visibility:visible!important;opacity:1!important;position:relative!important;z-index:1!important;text-indent: 1px!important;font-size:14px!important;color:#686868!important;margin:0!important;">Design
+                                                                by - <a href="https://www.pikitemplates.com/"
+                                                                        id="pikitemplates" rel="dofollow"
+                                                                        style="visibility:visible!important;opacity:1!important;position:relative!important;z-index:1!important;text-indent: 1px!important;font-size:14px!important;color:#686868!important;margin:0!important;">Blogger
+                                                                        Templates</a> | Distributed by <a
+                                                                        href="https://www.himexam.com/" rel="dofollow">
+                                                                        www.Himexam.com</a></span>
+                                                </div>
                                         </div>
                                 </div>
+
+
+                                <!--------->
+
+
                         </div>
                         <div class="container_filler">
                         </div>
@@ -100,6 +101,7 @@
                         </div>
                 </div>
         </div>
+
         <script>
                 function handle_toggle_side_bar(e) {
                         let header;
@@ -243,11 +245,10 @@
                 document.getElementById('right_pane_toggle_nav').addEventListener('click',
                         handle_toggle_side_bar_button);
         </script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-                crossorigin="anonymous"></script>
+
         {footer_js_inclusions}
         {dynamic_footer_includes}
+
 </body>
 
 </html>
