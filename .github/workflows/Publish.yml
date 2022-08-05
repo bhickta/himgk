@@ -47,12 +47,13 @@ jobs:
       #     cd himgk
       #     python -m obsidianhtml -i config.yaml
 
-      - name: Clone GuillaumeFalourd/formulas-training PRIVATE repository
+      - name: Clone into Private Repo
         uses: GuillaumeFalourd/clone-github-repo-action@v2
         with:
           owner: 'gpQ4utjefs'
           repository: 'himgk'
           access-token: ${{ secrets.GithubToken }}
+
       - name: Access cloned repository content
         run: |
           cd himgk
@@ -64,13 +65,11 @@ jobs:
           cd himgk/output
           mv html docs
       
-      # - name: removing unwanted links
-      #   run: |
-      #     cd himgk/output/docs
-      #     ls
-      #     sed -i 's/^.+config\.yaml.+$//g' index.html
-      #     cat index.html
-         
+      - name: removing unwanted links
+        run: |
+          sed -i '/config.yaml/d' himgk/output/docs/index.html
+          sed -i '/default-documentation-template.html/d' himgk/output/docs/index.html
+  
       - name: Push to gh-pages branch --force
         # You may pin to the exact commit or the version.
         # uses: ftnext/action-push-ghpages@621f3b2f1d34079b4da6051daedb3e200af0dd38
