@@ -53,11 +53,8 @@ jobs:
           owner: 'gpQ4utjefs'
           repository: 'himgk'
           access-token: ${{ secrets.GithubToken }}
-          run: ls
-      - name: Access cloned repository content
-        run: |
-          cd himgk/output
-          ls -la
+          run: cd himgk
+
       - name: Rename - rename html to docs
         run: |
           cd himgk/output
