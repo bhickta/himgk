@@ -43,7 +43,7 @@ jobs:
       - name: Cloning your repo containing obsidian vault and config.yaml - with 'master branch'
         run: |
           # config.yaml must have right relative path to obsidian_folder_path_str: and obsidian_entrypoint_path_str:
-          git clone https://github.com/gpQ4utjefs/himgk.git
+          git clone git@github.com:gpQ4utjefs/himgk.git
           cd himgk
           python -m obsidianhtml -i config.yaml
           
