@@ -7,6 +7,7 @@
 - [ ]  [[06 Society/06 Society|06 Society]]
 - [ ]  [[10 Miscellaneous/10 Miscellaneous|10 Miscellaneous]]
 - [ ]  [[config.yaml|config.yaml]]
+- [ ]  [[default-documentation-template.html|default-documentation-template.html]]
 - [ ]  [[Z_HP General Studies|Z_HP General Studies]]
 - [ ]  [[Z_MCQ/Z_MCQ|Z_MCQ]]
 - [ ]  [[Z_PYQ Himachal Pradesh|Z_PYQ Himachal Pradesh]]
