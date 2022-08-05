@@ -43,13 +43,13 @@ jobs:
       - name: Cloning your repo containing obsidian vault and config.yaml - with 'master branch'
         run: |
           # config.yaml must have right relative path to obsidian_folder_path_str: and obsidian_entrypoint_path_str:
-          git clone https://github.com/gpQ4utjefs/gpQ4utjefs.github.io.git
-          cd gpQ4utjefs.github.io
+          git clone https://github.com/gpQ4utjefs/himgk.git
+          cd himgk
           python -m obsidianhtml -i config.yaml
           
       - name: Rename - rename html to docs
         run: |
-          cd gpQ4utjefs.github.io/output
+          cd himgk/output
           mv html docs
          
       - name: Push to gh-pages branch --force
@@ -58,6 +58,6 @@ jobs:
         uses: ftnext/action-push-ghpages@v1.0.0
         with:
           # Path to the directory where the static assets are located.
-          build_dir: /home/runner/work/gpQ4utjefs.github.io/gpQ4utjefs.github.io/gpQ4utjefs.github.io/output
+          build_dir: /home/runner/work/himgk/himgk/himgk/output
           # Create github token in repo/settings/secrets/actions with name GithubToken
           github_token: ${{ secrets.GithubToken }}
