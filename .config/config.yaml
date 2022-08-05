@@ -87,19 +87,14 @@ navbar_links:
   - name: Home
     link: index.html
   - name: About
-    link: General Information/About ObsidianHtml.html  
-  - name: Quickstart
-    link: Instructions/Quickstart.html
-  - name: Styling
-    link: Configurations/Styling/Styling.html    
-  - name: Modes
-    link: Configurations/Modes.html
-  - name: Features
-    link: Configurations/Features.html
-  - name: Configurations
-    link: Configurations/Configuration Options.html
-  - name: News
-    link: News.html    
+    link: AdminHimGK/About.html  
+  - name: Disclaimer
+    link: AdminHimGK/Disclaimer.html
+  - name: Privacy Policy
+    link: AdminHimGK/Privacy Policy.html    
+  - name: Contact
+    link: AdminHimGK/Contact.html
+
 ##########################################################################
 #                    OPTIONAL BEHAVIOR / FEATURES                        #
 ##########################################################################
