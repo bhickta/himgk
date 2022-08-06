@@ -68,17 +68,17 @@
                                 {content}
                                 {footer_js_inclusions}
                                 {dynamic_footer_includes}
+                                <!-- end content -->
+                        </div>
+                        <div class="container_filler">
+                        </div>
+                        <div id="right_pane" class="right_pane active">
+                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                                <div id="right_pane_content" class="right_pane_content">
+                                        {right_pane_content}
+                                </div>
                         </div>
                 </div>
-                <div class=" container_filler">
-                </div>
-                <div id="right_pane" class="right_pane active">
-                        <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
-                        <div id="right_pane_content" class="right_pane_content">
-                                {right_pane_content}
-                        </div>
-                </div>
-        </div>
         </div>
 
         <script>
@@ -220,10 +220,13 @@
                 init_pane_folding(document.getElementById('right_pane_fold_header'));
 
                 document.getElementById('left_pane_toggle_nav').addEventListener('click',
-                        handle_toggle_side_bar_button);
+                handle_toggle_side_bar_button);
                 document.getElementById('right_pane_toggle_nav').addEventListener('click',
                         handle_toggle_side_bar_button);
         </script>
+
+
+
 
 </body>
 
