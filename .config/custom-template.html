@@ -32,8 +32,7 @@
         <div id="page_holder" class="flex_col">
                 <div id="header" class="header">
                         <div id="header_flex" class="flex_row">
-                                <a href="{html_url_prefix}/index.html" id="homelink"
-                                        title="Clear screen and go to homepage">{title}</a>
+                                <a href="/index.html"><img src="https://i.imgur.com/8ssyGvN.png" style="width:70px;height:70px;></a>
                                 <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
                                         ≡
                                 </div>
@@ -68,21 +67,17 @@
                                 {content}
                                 {footer_js_inclusions}
                                 {dynamic_footer_includes}
-                                <br>
-                                <div class="logo">
-                                        <a href="{html_url_prefix}/index.html"><img src="https://imgur.com/oeGq228.png" style="width:100px;height:100px;></a><html>
-                                </div>
-                                <!-- end content -->
-                        </div>
-                        <div class=" container_filler">
-                        </div>
-                        <div id="right_pane" class="right_pane active">
-                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
-                                <div id="right_pane_content" class="right_pane_content">
-                                        {right_pane_content}
-                                </div>
                         </div>
                 </div>
+                <div class=" container_filler">
+                </div>
+                <div id="right_pane" class="right_pane active">
+                        <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                        <div id="right_pane_content" class="right_pane_content">
+                                {right_pane_content}
+                        </div>
+                </div>
+        </div>
         </div>
 
         <script>
@@ -224,7 +219,7 @@
                 init_pane_folding(document.getElementById('right_pane_fold_header'));
 
                 document.getElementById('left_pane_toggle_nav').addEventListener('click',
-                handle_toggle_side_bar_button);
+                        handle_toggle_side_bar_button);
                 document.getElementById('right_pane_toggle_nav').addEventListener('click',
                         handle_toggle_side_bar_button);
         </script>
