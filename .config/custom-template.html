@@ -43,7 +43,11 @@
 
 <body class="theme-obs-light">
         <!-- Disable Drag -->
-        oncontextmenu="return false" onselectstart="return false" ondragstart="return false"
+        <script>
+                oncontextmenu = "return false"
+                onselectstart = "return false"
+                ondragstart = "return false"
+        </script>
         <div id="antiflash" style="display: none;"></div>
         <script>
                 document.getElementById('antiflash').style.display = 'block';
@@ -90,19 +94,22 @@
                                 {footer_js_inclusions}
                                 {dynamic_footer_includes}
                                 <!-- end content -->
-                        <!-- Disqus Comment -->
-                        <div id="disqus_thread"></div>
-                        <script id="dsq-count-scr" src="//himgk.disqus.com/count.js" async></script>
-                        <script>
-                            (function() { // DON'T EDIT BELOW THIS LINE
-                            var d = document, s = d.createElement('script');
-                            s.src = 'https://himgk.disqus.com/embed.js';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                            })();
-                        </script>
-                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                                
+                                <!-- Disqus Comment -->
+                                <div id="disqus_thread"></div>
+                                <script id="dsq-count-scr" src="//himgk.disqus.com/count.js" async></script>
+                                <script>
+                                        (function () { // DON'T EDIT BELOW THIS LINE
+                                                var d = document,
+                                                        s = d.createElement('script');
+                                                s.src = 'https://himgk.disqus.com/embed.js';
+                                                s.setAttribute('data-timestamp', +new Date());
+                                                (d.head || d.body).appendChild(s);
+                                        })();
+                                </script>
+                                <noscript>Please enable JavaScript to view the <a
+                                                href="https://disqus.com/?ref_noscript">comments powered by
+                                                Disqus.</a></noscript>
+
                         </div>
                         <div class="container_filler">
                         </div>
