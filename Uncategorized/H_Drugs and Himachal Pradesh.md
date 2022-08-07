@@ -1,8 +1,0 @@
-#H/HP 
-# H_Drugs and Himachal Pradesh
-* Debate ==> Legalize cannabis or Marijuana or hemp plantation(economy), [war on drugs itself(panic, illegalization, glamorization) is gate way to drug](https://youtu.be/BzSzcm7JPoI)
-* Law ==> Narcotics and Psychotropic Substances Act, 1985 => permits the mass cultivation of hemp for horticultural and industrial use, section 10(extent decided by states -> HP not used it)
-* Advantages ==> Easy to grow => Easy growth in hp, rapid, Water 400x less, almost negligible herbicides, pesticides, manure, and protection from wild animals) | Industry => 25,000 end products including health foods, organic body care, clothing, construction materials, biofuels(biodiesel), plastic composites(hempcrete), 2/3 times more fibre than cotton and 8x tensile strength | Medical and neurological research => Lung capacity rise, chemotherapy and Cancer : CBD (Cannabidiol), alcoholism, Alzheimer’s Disease, pain like Arthritis, metabolism | Economy => $1.5 trillion hemp industry currently dominated by China, France and Germany | Environmental => Save trees Paper 3-4X, ecological balance | End War on Drugs => only allowed drug mafia to develop a parallel black economy | Cultural and tourism => Vedas, cannabis is one of five sacred plants
-* Best practice ==> GM cannabis(have less THC tetra hydro cannabinol, psychotropic effect↓)
-* Indonesia: Highly sophisticated & targeted, 2/3 man smoke, simultaneous smoking & producing child labor, 10% income, European firms neo colonialism[]][]]
-* Pakistan: Drug child rape

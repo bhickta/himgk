@@ -1,3 +1,0 @@
-* On 20th November 1620, news of the capture of Kangra fort reached the Jahangir.
-* Jahangir visited Dhameri (Nurpur) in 1622 A.D. and renamed Dhameri as Nurpur in the honour of his wife ‘Noor-Jahan’.
-* In A.D. 1623 ‘Battle of Dhalog’ near Dhalousie was fought between Raja Jagat Singh of Nurpur assisted by Mughal forces and Raja Janardhan son of Balbhadra in which Bishamber brother of Janardhan was killed. Later on, Janardhan was killed by deception by Jagat Singh.

@@ -8,7 +8,6 @@
 -  [[10 Miscellaneous/10 Miscellaneous|10 Miscellaneous]]
 -  [[AdminHimGK/AdminHimGK|AdminHimGK]]
 -  [[Home|Home]]
--  [[Uncategorized/Uncategorized|Uncategorized]]
 -  [[Z_HP General Studies|Z_HP General Studies]]
 -  [[Z_MCQ/Z_MCQ|Z_MCQ]]
 -  [[Z_PYQ Himachal Pradesh|Z_PYQ Himachal Pradesh]]
