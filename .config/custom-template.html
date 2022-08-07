@@ -15,40 +15,15 @@
         <!-- Includes -->
         {dynamic_includes}
 
-        <!-- Block right click -->
-        <script>
-                var isNS = (navigator.appName == "Netscape") ? 1 : 0;
-                if (navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN || Event.MOUSEUP);
-
-                function mischandler() {
-                        return false;
-                }
-
-                function mousehandler(e) {
-                        var myevent = (isNS) ? e : event;
-                        var eventbutton = (isNS) ? myevent.which : myevent.button;
-                        if ((eventbutton == 2) || (eventbutton == 3)) return false;
-                }
-                document.oncontextmenu = mischandler;
-                document.onmousedown = mousehandler;
-                document.onmouseup = mousehandler;
-        </script>
-
         <!-- Onload tweaks -->
         <script>
                 const CURRENT_NODE = '{pinnedNode}';
                 const HTML_URL_PREFIX = '{html_url_prefix}';
         </script>
-</head>
 
-<body class="theme-obs-light">
-        <!-- Disable Drag -->
-        <script>
-                oncontextmenu = "return false"
-                onselectstart = "return false"
-                ondragstart = "return false"
-        </script>
-        <div id="antiflash" style="display: none;"></div>
+<body class="theme-obs-light" onmousedown="return false" onselectstart="return false>
+                <div id=" antiflash" style="display: none;">
+        </div>
         <script>
                 document.getElementById('antiflash').style.display = 'block';
         </script>
@@ -73,9 +48,11 @@
                                                 {rss_button}
                                         </div>
                                         <div style="display: flex; flex-direction:column">
-                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">
+                                                        Toggle
                                                         Directory Tree Pane</div>
-                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">
+                                                        Toggle
                                                         Table of Contents Pane</div>
                                         </div>
                                 </div>
@@ -91,9 +68,6 @@
                         </div> -->
                         <div class="container">
                                 {content}
-                                {footer_js_inclusions}
-                                {dynamic_footer_includes}
-                                <!-- end content -->
                                 <!-- Disqus Comment -->
                                 <div id="disqus_thread"></div>
                                 <script id="dsq-count-scr" src="//himgk.disqus.com/count.js" async></script>
@@ -110,6 +84,9 @@
                                                 href="https://disqus.com/?ref_noscript">comments powered by
                                                 Disqus.</a></noscript>
 
+                                {footer_js_inclusions}
+                                {dynamic_footer_includes}
+                                <!-- end content -->
                         </div>
                         <div class="container_filler">
                         </div>
@@ -199,8 +176,9 @@
                 }
 
                 function save_panel_folding_state(header, active) {
-                        localStorage.setItem('pane_folding_state_' + panel_folding_get_panel_name(header), Number(
-                                active));
+                        localStorage.setItem('pane_folding_state_' + panel_folding_get_panel_name(header),
+                                Number(
+                                        active));
                 }
 
                 function load_panel_folding_state(panel_name) {
