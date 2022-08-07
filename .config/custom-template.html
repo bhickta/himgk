@@ -20,20 +20,6 @@
                 const CURRENT_NODE = '{pinnedNode}';
                 const HTML_URL_PREFIX = '{html_url_prefix}';
         </script>
-        <!-- Disable cut/copy/paste -->
-        <script type="text/javascript">
-                $(document).ready(function () {
-                        $('body').bind('cut copy paste', function (event) {
-                                event.preventDefault();
-                        });
-                });
-        </script>
-        <!-- Disable right click -->
-        <script type="text/javascript">
-                $(document).bind("contextmenu", function (e) {
-                        return false;
-                });
-        </script>
 
 <body class="theme-obs-light">
         <div id=" antiflash" style="display: none;">
@@ -258,7 +244,20 @@
                         handle_toggle_side_bar_button);
         </script>
 
-
+        <!-- Disable cut/copy/paste -->
+        <script type="text/javascript">
+                $(document).ready(function () {
+                        $('body').bind('cut copy paste', function (event) {
+                                event.preventDefault();
+                        });
+                });
+        </script>
+        <!-- Disable right click -->
+        <script type="text/javascript">
+                $(document).bind("contextmenu", function (e) {
+                        return false;
+                });
+        </script>
 
 
 </body>
