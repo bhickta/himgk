@@ -1,0 +1,5 @@
+#H/HP 
+# Women Himachal Pradesh
+* State Sponsored Schemes: 📦 [[Beti Hai Anmol Yojn]] 📦 [[Mukhya Mantri Kanyadan Yojn]] 📦 [[Self Employment Assistance for Women]] 📦 [[Mahila Vikas Nigam]] 📦 [[Widow Re-marriage Schem]] 📦 [[Mother- Teresa Asahaya Matri Sambal Yojn]] 📦 [[State Home For Women]] 📦 [[Vishesh Mahila Uthaan Yojan]] 📦 [[Financial Assistance and support service to victim of rape schem]] 📦 [[Himachal Pradesh Mahila Vikas Protsahan Yojan]] 📦 [[Mata Shabari Mahilla Sashktikarn Yojn]] 📦 [[Safe City Project Mand]]      📦 [[Women Schemes Primary Contacts in HP]]
+* Centrally sponsored scheme: [[Indira Gandhi Matritava Sahyog Yojana (IGMSY)]] 📦 [[Rajiv Gandhi Scheme for Empowerment of Adolescent Girls (SABLA)]] 📦 [[Kishori Shakti Yojan]]
+* Schemes Relating to Children: [[Integrated Child Protection Scheme (ICPS)]] 📦 [[Integrated Child Development Services Scheme (ICDS)]] 📦 [[Child Women related Act]]
