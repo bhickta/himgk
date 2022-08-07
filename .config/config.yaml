@@ -87,6 +87,15 @@ html_custom_footer_inclusions:
 navbar_links:
   - name: Home
     link: index.html
+  - name: 01 History of Himachal Pradesh
+    link: 01 History of Himachal Pradesh/index.html
+  - name: 03 Culture of Himachal Pradesh
+    link: 03 Culture of Himachal Pradesh/index.html
+  - name: 04 Administration and Politics HP
+    link: 04 Administration and Politics HP/index.html
+  - name: 04 Economy
+    link: 04 Economy/index.html
+
 ##########################################################################
 #                    OPTIONAL BEHAVIOR / FEATURES                        #
 ##########################################################################
