@@ -83,7 +83,7 @@
                                 <noscript>Please enable JavaScript to view the <a
                                                 href="https://disqus.com/?ref_noscript">comments powered by
                                                 Disqus.</a></noscript>
-
+                                <br>
                                 {footer_js_inclusions}
                                 {dynamic_footer_includes}
                                 <!-- end content -->
@@ -243,22 +243,20 @@
                 document.getElementById('right_pane_toggle_nav').addEventListener('click',
                         handle_toggle_side_bar_button);
         </script>
-
-        <!-- Disable cut/copy/paste -->
-        <script type="text/javascript">
-                $(document).ready(function () {
-                        $('body').bind('cut copy paste', function (event) {
-                                event.preventDefault();
-                        });
-                });
+        <script>
+                < input
+                type = "text"
+                onselectstart = "return false"
+                oncut = "return false"
+                oncopy = "return false"
+                onpaste = "return false"
+                ondrag = "return false"
+                ondrop = "return false" /
+                        >
         </script>
-        <!-- Disable right click -->
         <script type="text/javascript">
-                $(document).bind("contextmenu", function (e) {
-                        return false;
-                });
+                document.oncontextmenu = new Function("return false");
         </script>
-
 
 </body>
 
