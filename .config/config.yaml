@@ -135,10 +135,10 @@ toggles:
   preserve_inline_tags: True
   
   features:
-    embedded_search:
+   breadcrumbs:
       enabled: True
-    
-     breadcrumbs:
+
+    embedded_search:
       enabled: True
 
     styling: 
