@@ -134,10 +134,12 @@ toggles:
   # Will preserve inline tags. This will give polluted markdown output
   preserve_inline_tags: True
   
+toggles:
   features:
-   breadcrumbs:
+    breadcrumbs:
       enabled: True
 
+  features:
     embedded_search:
       enabled: True
 
