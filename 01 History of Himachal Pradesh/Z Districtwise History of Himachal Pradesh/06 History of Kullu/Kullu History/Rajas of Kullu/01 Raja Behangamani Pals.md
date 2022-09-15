@@ -9,14 +9,9 @@
 * #capital/shift Capital at Jagatsukh or Nast(10generation, original capital, till Raja Visud Pal shifted it to Naggar (for next 1,400 years) --> Sultanpur --> Kullu
   
 ```query
-#founder/dynasty 
+founder/dynasty 
 ```
-```query list
-#founder/dynasty 
-```
+
 ```query
-tag: #founder/dynasty 
-```
-```query list
 tag: #founder/dynasty 
 ```
