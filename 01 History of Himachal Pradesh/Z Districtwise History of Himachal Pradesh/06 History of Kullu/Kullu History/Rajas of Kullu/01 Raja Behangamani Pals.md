@@ -1,3 +1,6 @@
+---
+Share: True
+---
 # 01 Raja Behangamani Pals
 * When:: 1 AD
 * #founder/dynasty Kullu

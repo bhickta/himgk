@@ -137,6 +137,9 @@ toggles:
   features:
     embedded_search:
       enabled: True
+    
+     breadcrumbs:
+      enabled: True
 
     styling: 
       layout: documentation               # documentation, tabs, minimal

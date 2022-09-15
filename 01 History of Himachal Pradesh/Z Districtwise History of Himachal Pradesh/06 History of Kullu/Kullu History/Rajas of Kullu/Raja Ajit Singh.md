@@ -1,3 +1,6 @@
+---
+Share: True
+---
 # Raja Ajit Singh
 * 1816-41 A.D, He was not the legitimate son of [[Raja Bikram Singh]].
 * He was installed as Raja with the #help/sought of Raja of Mandi
