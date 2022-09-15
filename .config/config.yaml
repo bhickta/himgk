@@ -133,16 +133,12 @@ toggles:
 
   # Will preserve inline tags. This will give polluted markdown output
   preserve_inline_tags: True
-  
-toggles:
-  features:
-    breadcrumbs:
-      enabled: True
 
   features:
     embedded_search:
       enabled: True
-
+    breadcrumbs:
+      enabled: True
     styling: 
       layout: documentation               # documentation, tabs, minimal
       max_note_width: 120rem              # not supported for layout: tabs
