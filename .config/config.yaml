@@ -82,7 +82,7 @@ html_template_path_str: '.config/custom-template.html'
 # Provide an array of custom inclusions (css, javascript, etc) that you would like to be included in the resultant html
 html_custom_inclusions: []
 html_custom_footer_inclusions:
-  - <html> <footer class="footer-distributed"> <div class="footer-right"> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> </div> <div class="footer-left"> <p class="footer-links"> <a class="link-1" href="#">Home</a> <a href="#">About</a> <a href="#">Privacy Policy</a> <a href="#">Disclaimer</a> <a href="#">Contact</a> </p> <p>HimGK &copy; 2022</p> </div> </footer> </html>
+  - <html> <footer class="footer-distributed"> <div class="footer-right"> <a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-twitter"></a> </div> <div class="footer-left"> <p class="footer-links"> <a class="link-1" href="#">Home</a> <a href="#">About</a> <a href="#">Privacy Policy</a> <a href="#">Disclaimer</a> <a href="#">Contact</a> </p> <p>HimGK &copy; 2022</p> </div> </footer> </html>
   - <link rel="stylesheet" href="/obs.html/static/custom.css" />
 navbar_links:
   - name: Home
