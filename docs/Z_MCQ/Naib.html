@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+        <!-- Page information -->
+        <meta charset="UTF-8" />
+        <meta name="node_id" content="naib">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        <!-- Set title -->
+        <title>HimGK</title>
+
+        <!-- Includes -->
+        
+<script src="/obs.html/static/obsidian_core.js"></script>
+<script src="/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/obs.html/static/master.css" />
+<script src="/obs.html/static/flexsearch.bundle.js"></script>
+<script src="/obs.html/static/pako.js"></script>
+<script src="/obs.html/static/search.js"></script>
+<script src="/obs.html/static/dirtree.js"></script>
+
+
+        <!-- Onload tweaks -->
+        <script>
+                const CURRENT_NODE = 'naib';
+                const HTML_URL_PREFIX = '';
+        </script>
+
+<body class="theme-obs-light">
+        <div id=" antiflash" style="display: none;">
+        </div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle_id('search-master-div');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            toggle_id('search-master-div');
+            return false;
+        } 
+    }, true);
+
+    function click_list_link(element){
+        element.parentElement.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+        <div id="page_holder" class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index.html" id="homelink"
+                                        title="Clear screen and go to homepage">HimGK</a>
+                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar requires_js">
+                                        <a class="navbar-link" href="/index.html" title="Home">Home</a>
+                                        <div class="icon-tray">
+                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
+        toggle(el);
+
+        // show the theme selector
+        toggle_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
+        }
+    }
+</script>
+                                                        <div onclick="openSearch()" class="theme-button requires_js">
+                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+                function openSearch(){
+                        // toggle search popup and continue with extra code if it is enabled this time
+                        if (toggle_id('search-master-div')){
+                                // clear input and put focus on it so that we can start typing immediately
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                                        <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=naib" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                                        <div >
+            <a id="dirtree_link" class="system-link" href="/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                <div>
+    <a href="/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                
+                                        </div>
+                                        <div style="display: flex; flex-direction:column">
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">
+                                                        Toggle
+                                                        Directory Tree Pane</div>
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">
+                                                        Toggle
+                                                        Table of Contents Pane</div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="light">Minimal</option>
+      <option value="obs-light" selected="selected">Light</option>
+      <option value="obs-dark">Dark</option>
+    </select> 
+</div>
+                </div>
+                <div class="flex_row">
+                        <!-- <div id="left_pane" class="left_pane active">
+                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+                                <div id="left_pane_content" class="left_pane_content">
+                                        <button id="folder-1" class="dir-button folder_note " href="/01 History of Himachal Pradesh/01 History of Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>01 History of Himachal Pradesh</button>
+<div id="folder-container-1" class="dir-container requires_js " path="/01 History of Himachal Pradesh">
+	<button id="folder-2" class="dir-button folder_note " href="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/4 Modern History of Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>4 Modern History of Himachal Pradesh</button>
+	<div id="folder-container-2" class="dir-container requires_js " path="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh">
+		<button id="folder-3" class="dir-button folder_note " href="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/01 Hill States and their relations with the Sikhs/01 Hill States and their relations with the Sikhs.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>01 Hill States and their relations with the Sikhs</button>
+		<div id="folder-container-3" class="dir-container requires_js " path="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/01 Hill States and their relations with the Sikhs">
+			<ul class="dir-list">
+				<li><a class="" href="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/01 Hill States and their relations with the Sikhs/01 Early Sikh Gurus and Himachal Pradesh.html"  >01 Early Sikh Gurus and Himachal Pradesh</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/01 Hill States and their relations with the Sikhs/02 Guru Gobind Singh.html"  >02 Guru Gobind Singh</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/01 Hill States and their relations with the Sikhs/03 Sikhs and Tussle for Kangra.html"  >03 Sikhs and Tussle for Kangra</a></li>
+			</ul>
+		</div>
+		<button id="folder-4" class="dir-button folder_note " href="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/National Struggle in Himachal Pradesh/National Struggle in Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>National Struggle in Himachal Pradesh</button>
+		<div id="folder-container-4" class="dir-container requires_js " path="/01 History of Himachal Pradesh/4 Modern History of Himachal Pradesh/National Struggle in Himachal Pradesh">
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<button id="folder-5" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Z Districtwise History of Himachal Pradesh</button>
+	<div id="folder-container-5" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh">
+		<button id="folder-6" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 History of Bilaspur.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>01 History of Bilaspur</button>
+		<div id="folder-container-6" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur">
+			<button id="folder-7" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/01 Rajas of Bilaspur.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>01 Rajas of Bilaspur</button>
+			<div id="folder-container-7" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur">
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.1 Raja Bir Chand.html"  >1.1 Raja Bir Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.10 Raja Tara Chand.html"  >1.10 Raja Tara Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.11 Raja Deep Chand (1650-1656).html"  >1.11 Raja Deep Chand (1650-1656)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.12 Raja Bhim Chand (1667).html"  >1.12 Raja Bhim Chand (1667)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.13 Raja Ajmer Chand (1712-41 AD).html"  >1.13 Raja Ajmer Chand (1712-41 AD)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.14 Raja Devi Chand (1741-78).html"  >1.14 Raja Devi Chand (1741-78)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.15 Mahan Chand (1785).html"  >1.15 Mahan Chand (1785)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.16 Raja Kharak Chand (1824-1839).html"  >1.16 Raja Kharak Chand (1824-1839)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.17 Raja Jagat Chand.html"  >1.17 Raja Jagat Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.18 Raja Hira Chand.html"  >1.18 Raja Hira Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.19 Amar Chand.html"  >1.19 Amar Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.2 Raja Kahal Chand.html"  >1.2 Raja Kahal Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.20 Raja Bijai Chand.html"  >1.20 Raja Bijai Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.21 Raja Anand Chand.html"  >1.21 Raja Anand Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.22 Raja Shubhendra Chand.html"  >1.22 Raja Shubhendra Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.3 Raja Ajit Chand.html"  >1.3 Raja Ajit Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.4 Raja Megh Chand.html"  >1.4 Raja Megh Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.5 Raja Abhisand Chand.html"  >1.5 Raja Abhisand Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.6 Raja Sampurna Chand.html"  >1.6 Raja Sampurna Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.7 Raja Gyan Chand or Ayam Chand (1570).html"  >1.7 Raja Gyan Chand or Ayam Chand (1570)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.8 Raja Bik Chand.html"  >1.8 Raja Bik Chand</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur/1.9 Raja Kalyan Chand (1630).html"  >1.9 Raja Kalyan Chand (1630)</a></li>
+				</ul>
+			</div>
+			<button id="folder-8" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/02 Modern History of Bilaspur/02 Modern History of Bilaspur.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>02 Modern History of Bilaspur</button>
+			<div id="folder-container-8" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/02 Modern History of Bilaspur">
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/02 Modern History of Bilaspur/Bilaspur Merger with Union of India.html"  >Bilaspur Merger with Union of India</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/02 Modern History of Bilaspur/Bilaspur Prajamandal.html"  >Bilaspur Prajamandal</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/01 Rajas of Bilaspur.html"  >01 Rajas of Bilaspur</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/01 History of Bilaspur/Places in Bilaspur.html"  >Places in Bilaspur</a></li>
+			</ul>
+		</div>
+		<button id="folder-9" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/02 History of Chamba.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>02 History of Chamba</button>
+		<div id="folder-container-9" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba">
+			<button id="folder-10" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1 Rajas of Chamba.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>1 Rajas of Chamba</button>
+			<div id="folder-container-10" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba">
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.1 Maru (550 A.D.).html"  >1.1 Maru (550 A.D.)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.10 Vijaya Varman.html"  >1.10 Vijaya Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.11 Ganesha Varman.html"  >1.11 Ganesha Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.12 Partap Singh Varman.html"  >1.12 Partap Singh Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.13 Balabadhra (1589 A.D.).html"  >1.13 Balabadhra (1589 A.D.)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.14 Janardan (1613 A.D.).html"  >1.14 Janardan (1613 A.D.)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.15 Prithvi Singh.html"  >1.15 Prithvi Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.16 Umed Singh.html"  >1.16 Umed Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.17 Sri Singh.html"  >1.17 Sri Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.18 Gopal Singh.html"  >1.18 Gopal Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.19 Sham Singh.html"  >1.19 Sham Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.2 Aditya Varman.html"  >1.2 Aditya Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.20 Bhuri Singh.html"  >1.20 Bhuri Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.21 Ram Singh.html"  >1.21 Ram Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.22 Lakshman Singh.html"  >1.22 Lakshman Singh</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.3 Divakar Varman.html"  >1.3 Divakar Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.4 Meru Varman.html"  >1.4 Meru Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.5 Laxmi Varman.html"  >1.5 Laxmi Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.6 Mushan Varman.html"  >1.6 Mushan Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.7 Sahil Varman (920 A.D).html"  >1.7 Sahil Varman (920 A.D)</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.8 Yugakar Varman.html"  >1.8 Yugakar Varman</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/02 History of Chamba/1 Rajas of Chamba/1.9 Asata Varman.html"  >1.9 Asata Varman</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-11" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/03 History of Hamirpur/03 History of Hamirpur.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>03 History of Hamirpur</button>
+		<div id="folder-container-11" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/03 History of Hamirpur">
+			<ul class="dir-list">
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/03 History of Hamirpur/01 HPGS.html"  >01 HPGS</a></li>
+			</ul>
+		</div>
+		<button id="folder-12" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/04 History of Kangra/04 History of Kangra.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>04 History of Kangra</button>
+		<div id="folder-container-12" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/04 History of Kangra">
+			<button id="folder-13" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/04 History of Kangra/Muslim Rulers and Kangra/Muslim Rulers and Kangra.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Muslim Rulers and Kangra</button>
+			<div id="folder-container-13" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/04 History of Kangra/Muslim Rulers and Kangra">
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/04 History of Kangra/Muslim Rulers and Kangra/Akbar and Kangra.html"  >Akbar and Kangra</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/04 History of Kangra/Muslim Rulers and Kangra/Firoz Shah Tuglaq and Kangra.html"  >Firoz Shah Tuglaq and Kangra</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/04 History of Kangra/Katoch.html"  >Katoch</a></li>
+			</ul>
+		</div>
+		<button id="folder-14" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/05 History of Kinnaur/05 History of Kinnaur.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>05 History of Kinnaur</button>
+		<div id="folder-container-14" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/05 History of Kinnaur">
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-15" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/06 History of Kullu.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>06 History of Kullu</button>
+		<div id="folder-container-15" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu">
+			<button id="folder-16" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu Economy/Kullu Economy.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Kullu Economy</button>
+			<div id="folder-container-16" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu Economy">
+				<button id="folder-17" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu Economy/Handicrafts of Kullu/Handicrafts of Kullu.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Handicrafts of Kullu</button>
+				<div id="folder-container-17" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu Economy/Handicrafts of Kullu">
+					<ul class="dir-list">
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu Economy/Handicrafts of Kullu/Himachali Cap.html"  >Himachali Cap</a></li>
+					</ul>
+				</div>
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu Economy/Infrastructure of Kullu.html"  >Infrastructure of Kullu</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu Economy/Tourism in Kullu.html"  >Tourism in Kullu</a></li>
+				</ul>
+			</div>
+			<button id="folder-18" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Kullu History.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Kullu History</button>
+			<div id="folder-container-18" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History">
+				<button id="folder-19" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Modern Kullu/Modern Kullu.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Modern Kullu</button>
+				<div id="folder-container-19" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Modern Kullu">
+					<ul class="dir-list">
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Modern Kullu/Formation of Modern Kullu.html"  >Formation of Modern Kullu</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Modern Kullu/Kullu under Britisher.html"  >Kullu under Britisher</a></li>
+					</ul>
+				</div>
+				<button id="folder-20" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Rajas of Kullu.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Rajas of Kullu</button>
+				<div id="folder-container-20" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu">
+					<ul class="dir-list">
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/01 Raja Behangamani Pals.html"  >01 Raja Behangamani Pals</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/02 Raja Visud Pal.html"  >02 Raja Visud Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Ajit Singh.html"  >Raja Ajit Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Bahadur Singh.html"  >Raja Bahadur Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Bhup Pal.html"  >Raja Bhup Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Bidhi Singh.html"  >Raja Bidhi Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Bikram Singh.html"  >Raja Bikram Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Dateshwar Pal.html"  >Raja Dateshwar Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Gambhir Pal.html"  >Raja Gambhir Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Hast Pal-I or Hait Pal.html"  >Raja Hast Pal-I or Hait Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Hast Pal-II.html"  >Raja Hast Pal-II</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Jagat Singh.html"  >Raja Jagat Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Jai Singh.html"  >Raja Jai Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Jareshwar Pal.html"  >Raja Jareshwar Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Kailash Pal.html"  >Raja Kailash Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Keral Pal.html"  >Raja Keral Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Man Singh.html"  >Raja Man Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Nand Pal.html"  >Raja Nand Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Narad Pal.html"  >Raja Narad Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Narender Pal.html"  >Raja Narender Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Pachch Pal.html"  >Raja Pachch Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Prasid Pal.html"  >Raja Prasid Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Pritam Singh.html"  >Raja Pritam Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Raj Singh.html"  >Raja Raj Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Rajender Pal.html"  >Raja Rajender Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Rudra Pal.html"  >Raja Rudra Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Santokh Pal.html"  >Raja Santokh Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Sidh Singh.html"  >Raja Sidh Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Sikandar Pal.html"  >Raja Sikandar Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Surat Pal or Hashir Pal.html"  >Raja Surat Pal or Hashir Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Tedi Singh.html"  >Raja Tedi Singh</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Teg Pal.html"  >Raja Teg Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Uchit Pal.html"  >Raja Uchit Pal</a></li>
+						<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Rajas of Kullu/Raja Urdan Pal.html"  >Raja Urdan Pal</a></li>
+					</ul>
+				</div>
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Ancient Kullu.html"  >Ancient Kullu</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Ancient Kullu's Seven Wazirs.html"  >Ancient Kullu's Seven Wazirs</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/06 History of Kullu/Kullu History/Source of the history of Kullu.html"  >Source of the history of Kullu</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-21" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/07 History of Lahaul Spiti.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>07 History of Lahaul Spiti</button>
+		<div id="folder-container-21" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti">
+			<button id="folder-22" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Tourism/Tourism.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Tourism</button>
+			<div id="folder-container-22" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Tourism">
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Tourism/Facilities.html"  >Facilities</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Tourism/Major Treks.html"  >Major Treks</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Tourism/Peaks.html"  >Peaks</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Disaster Management.html"  >Disaster Management</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Glaciers.html"  >Glaciers</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Passes.html"  >Passes</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Public Utilities.html"  >Public Utilities</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Rivers.html"  >Rivers</a></li>
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/07 History of Lahaul Spiti/Statistics.html"  >Statistics</a></li>
+			</ul>
+		</div>
+		<button id="folder-23" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/08 History of Mandi/08 History of Mandi.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>08 History of Mandi</button>
+		<div id="folder-container-23" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/08 History of Mandi">
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-24" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/09 History of Shimla/09 History of Shimla.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>09 History of Shimla</button>
+		<div id="folder-container-24" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/09 History of Shimla">
+			<button id="folder-25" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/09 History of Shimla/Bushahr/Bushahr.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Bushahr</button>
+			<div id="folder-container-25" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/09 History of Shimla/Bushahr">
+				<ul class="dir-list">
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/09 History of Shimla/Bushahr/Art.html"  >Art</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/09 History of Shimla/Bushahr/Foreign Policy.html"  >Foreign Policy</a></li>
+					<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/09 History of Shimla/Bushahr/Struggle and Integeration in HP.html"  >Struggle and Integeration in HP</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-26" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/10 History of Sirmaur/10 History of Sirmaur.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>10 History of Sirmaur</button>
+		<div id="folder-container-26" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/10 History of Sirmaur">
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-27" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/11 History of Solan/11 History of Solan.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>11 History of Solan</button>
+		<div id="folder-container-27" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/11 History of Solan">
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-28" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/12 History of Una/12 History of Una.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>12 History of Una</button>
+		<div id="folder-container-28" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/12 History of Una">
+			<ul class="dir-list">
+				<li><a class="" href="/01 History of Himachal Pradesh/Z Districtwise History of Himachal Pradesh/12 History of Una/01 HPGS.html"  >01 HPGS</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<button id="folder-29" class="dir-button folder_note " href="/01 History of Himachal Pradesh/Z HpGeneralstudies/Z HpGeneralstudies.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Z HpGeneralstudies</button>
+	<div id="folder-container-29" class="dir-container requires_js " path="/01 History of Himachal Pradesh/Z HpGeneralstudies">
+		<ul class="dir-list">
+			<li><a class="" href="/01 History of Himachal Pradesh/Z HpGeneralstudies/Content.html"  >Content</a></li>
+			<li><a class="" href="/01 History of Himachal Pradesh/Z HpGeneralstudies/Cottage and Small Scale Industries in Himachal Pradesh.html"  >Cottage and Small Scale Industries in Himachal Pradesh</a></li>
+			<li><a class="" href="/01 History of Himachal Pradesh/Z HpGeneralstudies/HP Employment generation.html"  >HP Employment generation</a></li>
+			<li><a class="" href="/01 History of Himachal Pradesh/Z HpGeneralstudies/HP Shiva Project.html"  >HP Shiva Project</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/01 History of Himachal Pradesh/01 Sources of History.html"  >01 Sources of History</a></li>
+		<li><a class="" href="/01 History of Himachal Pradesh/2 Ancient History of Himachal Pradesh.html"  >2 Ancient History of Himachal Pradesh</a></li>
+		<li><a class="" href="/01 History of Himachal Pradesh/3 Medieval History of India.html"  >3 Medieval History of India</a></li>
+		<li><a class="" href="/01 History of Himachal Pradesh/Chronology of Various Historical Events of Himachal Pradesh.html"  >Chronology of Various Historical Events of Himachal Pradesh</a></li>
+		<li><a class="" href="/01 History of Himachal Pradesh/Z Important Facts of History of Himachal Pradesh.html"  >Z Important Facts of History of Himachal Pradesh</a></li>
+		<li><a class="" href="/01 History of Himachal Pradesh/Z Objective Questions.html"  >Z Objective Questions</a></li>
+	</ul>
+</div>
+<button id="folder-30" class="dir-button folder_note " href="/03 Culture of Himachal Pradesh/03 Culture of Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>03 Culture of Himachal Pradesh</button>
+<div id="folder-container-30" class="dir-container requires_js " path="/03 Culture of Himachal Pradesh">
+	<button id="folder-31" class="dir-button folder_note " href="/03 Culture of Himachal Pradesh/Architecture/Architecture.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Architecture</button>
+	<div id="folder-container-31" class="dir-container requires_js " path="/03 Culture of Himachal Pradesh/Architecture">
+		<button id="folder-32" class="dir-button folder_note " href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1 Monastries of Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>1 Monastries of Himachal Pradesh</button>
+		<div id="folder-container-32" class="dir-container requires_js " path="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh">
+			<ul class="dir-list">
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.1 Kye or Ki Monastery.html"  >1.1 Kye or Ki Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.10 Dhankar Monastery.html"  >1.10 Dhankar Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.11 Lotsabaage Monastery.html"  >1.11 Lotsabaage Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.12 Palpung Sherabling Monastery.html"  >1.12 Palpung Sherabling Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.2 Guru Ghantal Monastery.html"  >1.2 Guru Ghantal Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.3 Rewalsar Monastery.html"  >1.3 Rewalsar Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.4 Tabo Monastery.html"  >1.4 Tabo Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.5 Kardang Monastery.html"  >1.5 Kardang Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.6 Kungri Gompa.html"  >1.6 Kungri Gompa</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.7 Tayul Gompa.html"  >1.7 Tayul Gompa</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.8 Shashur Monastery.html"  >1.8 Shashur Monastery</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/1 Monastries of Himachal Pradesh/1.9 Thang Yug Gompa.html"  >1.9 Thang Yug Gompa</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/Temple Architecture Himachal Pradesh.html"  >Temple Architecture Himachal Pradesh</a></li>
+			<li><a class="" href="/03 Culture of Himachal Pradesh/Architecture/Temples of Himachal Pradesh - List.html"  >Temples of Himachal Pradesh - List</a></li>
+		</ul>
+	</div>
+	<button id="folder-33" class="dir-button folder_note " href="/03 Culture of Himachal Pradesh/Dance and Songs/Dance and Songs.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Dance and Songs</button>
+	<div id="folder-container-33" class="dir-container requires_js " path="/03 Culture of Himachal Pradesh/Dance and Songs">
+		<button id="folder-34" class="dir-button folder_note " href="/03 Culture of Himachal Pradesh/Dance and Songs/1 Pahari Style - Painting of Himachal Pradesh/1 Pahari Style - Painting of Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>1 Pahari Style - Painting of Himachal Pradesh</button>
+		<div id="folder-container-34" class="dir-container requires_js " path="/03 Culture of Himachal Pradesh/Dance and Songs/1 Pahari Style - Painting of Himachal Pradesh">
+			<ul class="dir-list">
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Dance and Songs/1 Pahari Style - Painting of Himachal Pradesh/1.1 Kangra School of Paintings.html"  >1.1 Kangra School of Paintings</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Dance and Songs/1 Pahari Style - Painting of Himachal Pradesh/1.2 Basholi School of Paintings.html"  >1.2 Basholi School of Paintings</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Dance and Songs/1 Pahari Style - Painting of Himachal Pradesh/1.3 Arki School of Paintings.html"  >1.3 Arki School of Paintings</a></li>
+				<li><a class="" href="/03 Culture of Himachal Pradesh/Dance and Songs/1 Pahari Style - Painting of Himachal Pradesh/1.4 Chamba School of Paintings.html"  >1.4 Chamba School of Paintings</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><a class="" href="/03 Culture of Himachal Pradesh/Dance and Songs/Folk Dances of Himachal Pradesh.html"  >Folk Dances of Himachal Pradesh</a></li>
+			<li><a class="" href="/03 Culture of Himachal Pradesh/Dance and Songs/Folk Plays of Himachal Pradesh.html"  >Folk Plays of Himachal Pradesh</a></li>
+			<li><a class="" href="/03 Culture of Himachal Pradesh/Dance and Songs/Folk Songs of Himachal Pradesh.html"  >Folk Songs of Himachal Pradesh</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+	</ul>
+</div>
+<button id="folder-35" class="dir-button folder_note " href="/04 Administration and Politics HP/04 Administration and Politics HP.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>04 Administration and Politics HP</button>
+<div id="folder-container-35" class="dir-container requires_js " path="/04 Administration and Politics HP">
+	<ul class="dir-list">
+		<li><a class="" href="/04 Administration and Politics HP/Reorganization of HP.html"  >Reorganization of HP</a></li>
+		<li><a class="" href="/04 Administration and Politics HP/Solan Seminar.html"  >Solan Seminar</a></li>
+		<li><a class="" href="/04 Administration and Politics HP/Suket Satyagraha.html"  >Suket Satyagraha</a></li>
+	</ul>
+</div>
+<button id="folder-36" class="dir-button folder_note " href="/04 Economy/04 Economy.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>04 Economy</button>
+<div id="folder-container-36" class="dir-container requires_js " path="/04 Economy">
+	<button id="folder-37" class="dir-button folder_note " href="/04 Economy/Economic Survey HP - 2020-21/Economic Survey HP - 2020-21.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Economic Survey HP - 2020-21</button>
+	<div id="folder-container-37" class="dir-container requires_js " path="/04 Economy/Economic Survey HP - 2020-21">
+		<button id="folder-38" class="dir-button folder_note " href="/04 Economy/Economic Survey HP - 2020-21/12 Road and Transportation/12 Road and Transportation.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>12 Road and Transportation</button>
+		<div id="folder-container-38" class="dir-container requires_js " path="/04 Economy/Economic Survey HP - 2020-21/12 Road and Transportation">
+			<ul class="dir-list">
+			</ul>
+		</div>
+		<button id="folder-39" class="dir-button folder_note " href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/14 Rural Development and Panchayati Raj.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>14 Rural Development and Panchayati Raj</button>
+		<div id="folder-container-39" class="dir-container requires_js " path="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj">
+			<ul class="dir-list">
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/DAYNRLM.html"  >DAYNRLM</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/DDU-GKY.html"  >DDU-GKY</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/MGNREGS.html"  >MGNREGS</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/MM1B.html"  >MM1B</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/MMAY.html"  >MMAY</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/PMAY-G.html"  >PMAY-G</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/Panchayati Raj.html"  >Panchayati Raj</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/Panchwati.html"  >Panchwati</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/RGSA.html"  >RGSA</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/SAGY.html"  >SAGY</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/SBMG.html"  >SBMG</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/SPMRM.html"  >SPMRM</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/WDC-PMKSY.html"  >WDC-PMKSY</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/Women SHGs HP.html"  >Women SHGs HP</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/14 Rural Development and Panchayati Raj/eGramSwaraj.html"  >eGramSwaraj</a></li>
+			</ul>
+		</div>
+		<button id="folder-40" class="dir-button folder_note " href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/15 Housing and Urban Development.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>15 Housing and Urban Development</button>
+		<div id="folder-container-40" class="dir-container requires_js " path="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development">
+			<ul class="dir-list">
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/AMRUT.html"  >AMRUT</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/ASSY.html"  >ASSY</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/BCCI.html"  >BCCI</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/Central Government.html"  >Central Government</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/DAY-NULM.html"  >DAY-NULM</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/HIMUDA.html"  >HIMUDA</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/MMSAGY.html"  >MMSAGY</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/PMAYU.html"  >PMAYU</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/RERA.html"  >RERA</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/SBMU.html"  >SBMU</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/SCM.html"  >SCM</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/Town and Country Planning.html"  >Town and Country Planning</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/15 Housing and Urban Development/Urban local bodies.html"  >Urban local bodies</a></li>
+			</ul>
+		</div>
+		<button id="folder-41" class="dir-button folder_note " href="/04 Economy/Economic Survey HP - 2020-21/16 Tables and Appendix/16 Tables and Appendix.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>16 Tables and Appendix</button>
+		<div id="folder-container-41" class="dir-container requires_js " path="/04 Economy/Economic Survey HP - 2020-21/16 Tables and Appendix">
+			<ul class="dir-list">
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/16 Tables and Appendix/T32 - Crime in Himachal Pradesh.html"  >T32 - Crime in Himachal Pradesh</a></li>
+			</ul>
+		</div>
+		<button id="folder-42" class="dir-button folder_note " href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Sector.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Social Sector</button>
+		<div id="folder-container-42" class="dir-container requires_js " path="/04 Economy/Economic Survey HP - 2020-21/Social Sector">
+			<button id="folder-43" class="dir-button folder_note " href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Social Welfare.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Social Welfare</button>
+			<div id="folder-container-43" class="dir-container requires_js " path="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare">
+				<ul class="dir-list">
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Minority.html"  >Minority</a></li>
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Old Age and Diseased.html"  >Old Age and Diseased</a></li>
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Other backward classes.html"  >Other backward classes</a></li>
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Poor and Infirms.html"  >Poor and Infirms</a></li>
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Scheduled castes.html"  >Scheduled castes</a></li>
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Scheduled tribes.html"  >Scheduled tribes</a></li>
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Specially abled.html"  >Specially abled</a></li>
+					<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Welfare/Widows, destitute, abused and Orphans children.html"  >Widows, destitute, abused and Orphans children</a></li>
+				</ul>
+			</div>
+			<ul class="dir-list">
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/AYUSH.html"  >AYUSH</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Education.html"  >Education</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Health.html"  >Health</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Health (1).html"  >Health (1)</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/NSQFS.html"  >NSQFS</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/STRIVE.html"  >STRIVE</a></li>
+				<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/Social Sector/Social Sector (1).html"  >Social Sector (1)</a></li>
+			</ul>
+		</div>
+		<ul class="dir-list">
+			<li><a class="" href="/04 Economy/Economic Survey HP - 2020-21/06 Price Movement and Food Management.html"  >06 Price Movement and Food Management</a></li>
+		</ul>
+	</div>
+	<button id="folder-44" class="dir-button folder_note " href="/04 Economy/Hydropower Power/Hydropower Power.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Hydropower Power</button>
+	<div id="folder-container-44" class="dir-container requires_js " path="/04 Economy/Hydropower Power">
+		<ul class="dir-list">
+			<li><a class="" href="/04 Economy/Hydropower Power/Problems with hydropower projects.html"  >Problems with hydropower projects</a></li>
+			<li><a class="" href="/04 Economy/Hydropower Power/Statistics.html"  >Statistics</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/04 Economy/Employment.html"  >Employment</a></li>
+		<li><a class="" href="/04 Economy/Geological Map.html"  >Geological Map</a></li>
+	</ul>
+</div>
+<button id="folder-45" class="dir-button folder_note " href="/06 Society/06 Society.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>06 Society</button>
+<div id="folder-container-45" class="dir-container requires_js " path="/06 Society">
+	<button id="folder-46" class="dir-button folder_note " href="/06 Society/Personalities of Himachal Pradesh/Personalities of Himachal Pradesh.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Personalities of Himachal Pradesh</button>
+	<div id="folder-container-46" class="dir-container requires_js " path="/06 Society/Personalities of Himachal Pradesh">
+		<ul class="dir-list">
+			<li><a class="" href="/06 Society/Personalities of Himachal Pradesh/YS Parmar.html"  >YS Parmar</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/06 Society/Urbanization.html"  >Urbanization</a></li>
+	</ul>
+</div>
+<button id="folder-47" class="dir-button folder_note " href="/10 Miscellaneous/10 Miscellaneous.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>10 Miscellaneous</button>
+<div id="folder-container-47" class="dir-container requires_js " path="/10 Miscellaneous">
+	<button id="folder-48" class="dir-button folder_note " href="/10 Miscellaneous/Appendix/Appendix.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Appendix</button>
+	<div id="folder-container-48" class="dir-container requires_js " path="/10 Miscellaneous/Appendix">
+		<ul class="dir-list">
+			<li><a class="" href="/10 Miscellaneous/Appendix/00 Tricks.html"  >00 Tricks</a></li>
+			<li><a class="" href="/10 Miscellaneous/Appendix/01 Books on Himachal Pradesh.html"  >01 Books on Himachal Pradesh</a></li>
+		</ul>
+	</div>
+	<button id="folder-49" class="dir-button folder_note " href="/10 Miscellaneous/Arun Katyayan Book/Arun Katyayan Book.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Arun Katyayan Book</button>
+	<div id="folder-container-49" class="dir-container requires_js " path="/10 Miscellaneous/Arun Katyayan Book">
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<button id="folder-50" class="dir-button folder_note " href="/10 Miscellaneous/Gandhian Thoughts/Gandhian Thoughts.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Gandhian Thoughts</button>
+	<div id="folder-container-50" class="dir-container requires_js " path="/10 Miscellaneous/Gandhian Thoughts">
+		<ul class="dir-list">
+			<li><a class="" href="/10 Miscellaneous/Gandhian Thoughts/Untitled.html"  >Untitled</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/10 Miscellaneous/Links.html"  >Links</a></li>
+	</ul>
+</div>
+<button id="folder-51" class="dir-button folder_note " href="/ZZ AdminHimGK/ZZ AdminHimGK.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>ZZ AdminHimGK</button>
+<div id="folder-container-51" class="dir-container requires_js " path="/ZZ AdminHimGK">
+	<ul class="dir-list">
+		<li><a class="" href="/ZZ AdminHimGK/About.html"  >About</a></li>
+		<li><a class="" href="/ZZ AdminHimGK/Contact.html"  >Contact</a></li>
+		<li><a class="" href="/ZZ AdminHimGK/Disclaimer.html"  >Disclaimer</a></li>
+		<li><a class="" href="/ZZ AdminHimGK/Footer.html"  >Footer</a></li>
+		<li><a class="" href="/ZZ AdminHimGK/Privacy Policy.html"  >Privacy Policy</a></li>
+	</ul>
+</div>
+<button id="folder-52" class="dir-button folder_note " href="/Z_MCQ/Z_MCQ.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Z_MCQ</button>
+<div id="folder-container-52" class="dir-container requires_js active" path="/Z_MCQ">
+	<button id="folder-53" class="dir-button folder_note " href="/Z_MCQ/Naib Tehsildar/Naib Tehsildar.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Naib Tehsildar</button>
+	<div id="folder-container-53" class="dir-container requires_js " path="/Z_MCQ/Naib Tehsildar">
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<button id="folder-54" class="dir-button folder_note " href="/Z_MCQ/PYQ/PYQ.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>PYQ</button>
+	<div id="folder-container-54" class="dir-container requires_js " path="/Z_MCQ/PYQ">
+		<ul class="dir-list">
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/Z_MCQ/NT.html"  >NT</a></li>
+		<li><a class="active" href="/Z_MCQ/Naib.html"  >Naib</a></li>
+		<li><a class="" href="/Z_MCQ/Naib Tehsildar 2017.html"  >Naib Tehsildar 2017</a></li>
+		<li><a class="" href="/Z_MCQ/Raman.html"  >Raman</a></li>
+	</ul>
+</div>
+<button id="folder-55" class="dir-button folder_note " href="/Z_Syllabus/Z_Syllabus.html" onclick="open_folder_note(this)"><div class="fn_pf"></div>Z_Syllabus</button>
+<div id="folder-container-55" class="dir-container requires_js " path="/Z_Syllabus">
+	<button id="folder-56" class="dir-button" onclick="toggle_dir(this.id)">1.6 HP Vidhan Sabha Secretariat Exams</button>
+	<div id="folder-container-56" class="dir-container requires_js " path="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams">
+		<ul class="dir-list">
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/1.6 HP Vidhan Sabha Secretariat Exams.html"  >1.6 HP Vidhan Sabha Secretariat Exams</a></li>
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/Chowkidar.html"  >Chowkidar</a></li>
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/Cleaner.html"  >Cleaner</a></li>
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/Clerk.html"  >Clerk</a></li>
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/Driver.html"  >Driver</a></li>
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/Frash.html"  >Frash</a></li>
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/Jr. Scale Stenographer.html"  >Jr. Scale Stenographer</a></li>
+			<li><a class="" href="/Z_Syllabus/1.6 HP Vidhan Sabha Secretariat Exams/Reporter (Hindi).html"  >Reporter (Hindi)</a></li>
+		</ul>
+	</div>
+	<button id="folder-57" class="dir-button" onclick="toggle_dir(this.id)">1.7 Miscellaneous</button>
+	<div id="folder-container-57" class="dir-container requires_js " path="/Z_Syllabus/1.7 Miscellaneous">
+		<ul class="dir-list">
+			<li><a class="" href="/Z_Syllabus/1.7 Miscellaneous/1.7 Miscellaneous.html"  >1.7 Miscellaneous</a></li>
+			<li><a class="" href="/Z_Syllabus/1.7 Miscellaneous/HP State Cooperative Bank.html"  >HP State Cooperative Bank</a></li>
+		</ul>
+	</div>
+	<ul class="dir-list">
+		<li><a class="" href="/Z_Syllabus/1.1 HP Police Exams.html"  >1.1 HP Police Exams</a></li>
+		<li><a class="" href="/Z_Syllabus/1.2 HPPSC Shimla Exams.html"  >1.2 HPPSC Shimla Exams</a></li>
+		<li><a class="" href="/Z_Syllabus/1.3 HP Revenue Dept. Exams.html"  >1.3 HP Revenue Dept. Exams</a></li>
+		<li><a class="" href="/Z_Syllabus/1.4 HPSSC Hamirpur Exams.html"  >1.4 HPSSC Hamirpur Exams</a></li>
+		<li><a class="" href="/Z_Syllabus/1.5 HP University Shimla Exams.html"  >1.5 HP University Shimla Exams</a></li>
+	</ul>
+</div>
+<ul class="dir-list">
+	<li><a class="" href="/Raja Behangamani Pal 1A.html"  >Raja Behangamani Pal 1A</a></li>
+	<li><a class="" href="/Z_HP General Studies.html"  >Z_HP General Studies</a></li>
+	<li><a class="" href="/Z_PYQ Himachal Pradesh.html"  >Z_PYQ Himachal Pradesh</a></li>
+	<li><a class="" href="/index.html"  >index</a></li>
+</ul>
+
+                                </div>
+                        </div> -->
+                        <div class="container">
+                                
+                    <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
+                        <div style="flex:1;display: none;"></div>
+                        <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
+                            <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/Z_MCQ/Z_MCQ.html" style="color: var(--normal-text-color);">Z_MCQ</a> / <a href="/Z_MCQ/Naib.html" >Naib</a>
+                        </div>
+                    </div>
+<h1 id="naib">Naib</h1>
+<div class="toc">
+<ul>
+<li><a href="#naib" class="anchor-link">Naib</a></li>
+</ul>
+</div>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>Answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Which raja of Nurpur princely state built the Taragarh Fort in the territory of Chamba princely state around 1625-30 A.D.? /.</td>
+<td>Basu</td>
+<td>Jagat Singh</td>
+<td>Jai Singh</td>
+<td>Rajrup Singh</td>
+<td>Jagat Singh</td>
+</tr>
+<tr>
+<td>What is the name of Yogi who guided Raja Sahil Varman of Chamba princely state regarding the site of the new capital of his state?</td>
+<td>Gorakhnath</td>
+<td>Bholanath</td>
+<td>Charpatnath</td>
+<td>Balaknath</td>
+<td>Charpatnath</td>
+</tr>
+<tr>
+<td>Which Mughal emperor got a mosque built inside the Kangra Fort?</td>
+<td>Humanyu</td>
+<td>Akbar</td>
+<td>Jahangir</td>
+<td>Aurangzeb</td>
+<td>Jahangir</td>
+</tr>
+<tr>
+<td>Which European traveller travelled from Nahan to Jammu via Nurpur around 1783 AD?</td>
+<td>Harcourt</td>
+<td>Forster</td>
+<td>Vigne</td>
+<td>Bernier</td>
+<td>Forster</td>
+</tr>
+<tr>
+<td>Which raja of Kullu was taken prisoner by the Suket princely state around 850-900 AD?</td>
+<td>Sidh Pal</td>
+<td>Bahadur Singh</td>
+<td>Bhup Pal</td>
+<td>Bidhi Singh</td>
+<td>Bhup Pal</td>
+</tr>
+<tr>
+<td>Around which century was a treaty signed between Raja Kehri Singh of Bushehr and Tibet?</td>
+<td>14th century</td>
+<td>15th century</td>
+<td>16th century</td>
+<td>17th century</td>
+<td>17th century</td>
+</tr>
+<tr>
+<td>Where was a decisive battle fought between the Gurkhas and the British during the first quarter of the nineteenth century?</td>
+<td>Jaitak Hills</td>
+<td>Haripur Dhar</td>
+<td>Sain Dhar</td>
+<td>Dharthi Dhar</td>
+<td>Jaitak Hills</td>
+</tr>
+<tr>
+<td>Who founded the ruling dynasty of Hindur princely state?</td>
+<td>Bir Chand</td>
+<td>Ajit Chand</td>
+<td>Kahal Chand</td>
+<td>Bik Chand</td>
+<td>Ajit Chand</td>
+</tr>
+<tr>
+<td>Which two Thakurais were made subordinate to Jubbal princely state in 1896 AD?</td>
+<td>Rawingarh and Ratesh</td>
+<td>Rawingarh and Sangri</td>
+<td>Rawingarh and Khaneti</td>
+<td>Rawingarh and Dhadi</td>
+<td>Rawingarh and Dhadi</td>
+</tr>
+<tr>
+<td>Which raja of Bushahr acted with hostility towards the British during 1857 mutiny?</td>
+<td>Shamsher Singh</td>
+<td>Mahinder Singh</td>
+<td>Ugra Singh</td>
+<td>Rudra Singh</td>
+<td>Shamsher Singh</td>
+</tr>
+<tr>
+<td>Which one of the following was sentenced to death in Lahore conspiracy case, which was later on reduced to life imprisonment?</td>
+<td>Hirday Ram</td>
+<td>Hardev</td>
+<td>Mathra Das</td>
+<td>Mian Jawahar Singh</td>
+<td>Hirday Ram</td>
+</tr>
+<tr>
+<td>When did Narendra Mandal (Chamber of Princes) come into existence?</td>
+<td>1911 A.D.</td>
+<td>1915 A.D.</td>
+<td>1921 A.D.</td>
+<td>1927 A.D.</td>
+<td>1921 A.D.</td>
+</tr>
+<tr>
+<td>According to 2011 census which district of H.P. has the lowest percentage of S.C. population?</td>
+<td>Kullu.</td>
+<td>Bilaspur</td>
+<td>Lahaul-Spiti</td>
+<td>Hamirpur</td>
+<td>Lahaul-Spiti</td>
+</tr>
+<tr>
+<td>Which mountain pass is located at the highest altitude?</td>
+<td>Kangla</td>
+<td>Parangla</td>
+<td>Kunjum</td>
+<td>Darati</td>
+<td>Parangla</td>
+</tr>
+<tr>
+<td>Which lake is located between Dodra-Kawar and Sangla (Kinnaur)?</td>
+<td>Karali</td>
+<td>Kareri</td>
+<td>Ghadasaru</td>
+<td>Bradonsar</td>
+<td>Bradonsar</td>
+</tr>
+<tr>
+<td>Given below are the names of some rivers and their tributaries. Find the mis-match?</td>
+<td>Yamuna – Jalal</td>
+<td>Satluj – Andhra</td>
+<td>Beas – Spin</td>
+<td>Chenab – Miyar</td>
+<td>Satluj – Andhra</td>
+</tr>
+<tr>
+<td>Which glacier feeds the Pabbar river?</td>
+<td>Kulti</td>
+<td>Shilli</td>
+<td>Chandra-Nahan</td>
+<td>Pacha</td>
+<td>Chandra-Nahan</td>
+</tr>
+<tr>
+<td>Near which town of Mandi District of H.P. is Shikari Devi sanctuary?</td>
+<td>Jogindernagar</td>
+<td>Sarkaghat</td>
+<td>Pandoh</td>
+<td>Sundernagar</td>
+<td>Sundernagar</td>
+</tr>
+<tr>
+<td>With which region of H.P. is Phulech festival mainly associated?</td>
+<td>Bharmaur</td>
+<td>Kinnaur</td>
+<td>Sirmaur</td>
+<td>Saproon</td>
+<td>Kinnaur</td>
+</tr>
+<tr>
+<td>When does the Minjar fair being in Chamba?</td>
+<td>First Monday of Sawan month</td>
+<td>Second Sunday of Sawan month</td>
+<td>First Monday of Bhadon month</td>
+<td>Second Sunday of Bhadon month</td>
+<td>Second Sunday of Sawan month</td>
+</tr>
+<tr>
+<td>Which among the following schools of painting deals with Nayak-Nayika theme of Rasikpriya of Keshavdas?</td>
+<td>Chamba</td>
+<td>Basholi</td>
+<td>Arki</td>
+<td>Bilaspur</td>
+<td>Arki</td>
+</tr>
+<tr>
+<td>Which one of the following temples is in Pagoda style?</td>
+<td>Hidimba (Manali)</td>
+<td>Lakshna Devi (Bharmaur)</td>
+<td>Shikari Devi (Chhitrari)</td>
+<td>Hateshwari Devi (Hatkoti)</td>
+<td>Hidimba (Manali)</td>
+</tr>
+<tr>
+<td>Approximately how many services are covered in H.P. under Public Service Guarantee Act?</td>
+<td>127</td>
+<td>147</td>
+<td>167</td>
+<td>187</td>
+<td>187</td>
+</tr>
+<tr>
+<td>At which place in Chamba District of H.P. there is a sheep-breeding farm?</td>
+<td>Bathree</td>
+<td>Sarol</td>
+<td>Mahla</td>
+<td>Banikhet</td>
+<td>Sarol</td>
+</tr>
+<tr>
+<td>In which District of H.P. is Suketi Fossil park?</td>
+<td>Mandi</td>
+<td>Shimla</td>
+<td>Sirmour</td>
+<td>Solan</td>
+<td>Sirmour</td>
+</tr>
+<tr>
+<td>Which princely state owned the Bantony building of Shimla town and used it as summer palace?</td>
+<td>Jubbal</td>
+<td>Keonthal</td>
+<td>Patiala</td>
+<td>Sirmaur</td>
+<td>Sirmaur</td>
+</tr>
+<tr>
+<td>Who founded the Shri Dhami Prem Pracharni Sabha in July 1939AD?</td>
+<td>Pandit Sita Ram</td>
+<td>Bhagmal Sautha</td>
+<td>Satyadev Bushahri</td>
+<td>Dina Nath Andhi</td>
+<td>Pandit Sita Ram</td>
+</tr>
+<tr>
+<td>What is the approximate percentage of marginal holdings in H.P.?</td>
+<td>59.78</td>
+<td>63.26</td>
+<td>66.73</td>
+<td>69.78</td>
+<td>69.78</td>
+</tr>
+<tr>
+<td>In which district of H.P. is Berra Dol where a 5 MW solar project is proposed?</td>
+<td>Mandi</td>
+<td>Hamirpur</td>
+<td>Una</td>
+<td>Bilaspur</td>
+<td>Bilaspur</td>
+</tr>
+<tr>
+<td>When was Beti Hai Anmol Yojana introduced in H.P.?</td>
+<td>Mar-09</td>
+<td>July 2010 (According to official answer key)</td>
+<td>Aug-11</td>
+<td>Sep-12</td>
+<td>July 2010 (According to official answer key)</td>
+</tr>
+<tr>
+<td>Who has been awarded “Dada Saheb Phalke Award for 2017”?</td>
+<td>Vishwanath</td>
+<td>Dalip Kumar</td>
+<td>Manoj Kumar</td>
+<td>Vinod Khanna</td>
+<td>Vinod Khanna</td>
+</tr>
+<tr>
+<td>Recently which longest road tunnel between Srinagar and Jammu was opened by the Prime Minister?</td>
+<td>Chenani-Nashri</td>
+<td>Dhola-Sadiya</td>
+<td>Zojila Tunnel</td>
+<td>Sandvin road tunnel</td>
+<td>Chenani-Nashri</td>
+</tr>
+<tr>
+<td>Which South Asian Satellite has been launched by ISRO in May 2017?</td>
+<td>GSAT-17</td>
+<td>GSAT-12</td>
+<td>GSAT-09</td>
+<td>GSAT-07</td>
+<td>GSAT-09</td>
+</tr>
+<tr>
+<td>Which has been thrust of “Paryatan Parv” organized by Ministry of Tourism from 5-25 October 2017?</td>
+<td>Ek Bharat Shrestha Bharat</td>
+<td>Ek Bharat Swatcha Bharat</td>
+<td>Ek Bharat Ek Sanskriti</td>
+<td>Ek Bharat Ek Vishwa</td>
+<td>Ek Bharat Shrestha Bharat</td>
+</tr>
+<tr>
+<td>Among the following who was/were conferred ‘Padma Vibhushan Awards’ in 2017?</td>
+<td>Sharad Pawar</td>
+<td>Murli Manohar Joshi</td>
+<td>A. Sangma</td>
+<td>All of the above</td>
+<td>All of the above</td>
+</tr>
+<tr>
+<td>Which date is being celebrated as International Day of Yoga?</td>
+<td>21st June</td>
+<td>5th March</td>
+<td>24th October</td>
+<td>25th December</td>
+<td>21st June</td>
+</tr>
+<tr>
+<td>Who was given Bhupen Hazarika National Award, 2017?</td>
+<td>Haraprasad Das</td>
+<td>Yeshe Dorjee Thongshi</td>
+<td>Manu S. Pillai</td>
+<td>Paro Anand</td>
+<td>Yeshe Dorjee Thongshi</td>
+</tr>
+<tr>
+<td>Who is the Chief Election Commissioner of India?</td>
+<td>Om Prakash Rawat</td>
+<td>Achal Kumar Joti</td>
+<td>Navin Chawla</td>
+<td>Gopalswami</td>
+<td>Om Prakash Rawat</td>
+</tr>
+<tr>
+<td>For the first time in October 2017 Ferry service in Gujarat has been started between which places?</td>
+<td>Ghogha-Dahej</td>
+<td>Bharuch-Kevadiya</td>
+<td>Ernakulum-Kalamassery</td>
+<td>Kanniyakumari-Aloor Port</td>
+<td>Ghogha-Dahej</td>
+</tr>
+<tr>
+<td>Who has been chosen for Indira Gandhi-Prize for Peace, Disarmament and Development for 2017?</td>
+<td>Pranab Mukharjee</td>
+<td>Manmohan Singh</td>
+<td>Kapil Sibbal</td>
+<td>Chidambaram</td>
+<td>Manmohan Singh</td>
+</tr>
+<tr>
+<td>Which person of Indian origin got Australia’s Highest civilian honour for his contribution in the field of medicine and work for the community?</td>
+<td>Purshottam Sawrikar</td>
+<td>Makhan Singh Khangure</td>
+<td>Vijay Kumar</td>
+<td>All of the above</td>
+<td>All of the above</td>
+</tr>
+<tr>
+<td>Who has been conferred with France’s highest civilian honour-Legion d’Honneur in 2017?</td>
+<td>Sachin Tendulkar</td>
+<td>Soumitra Chatterjee</td>
+<td>Amitabh Bachchan</td>
+<td>Satyajit Ray</td>
+<td>Soumitra Chatterjee</td>
+</tr>
+<tr>
+<td>Among the following which Indian Judge has been elected to International Court of Justice?</td>
+<td>Nagendra Singh</td>
+<td>Jagdish Bhagwati</td>
+<td>Deepak Mishra</td>
+<td>Dalveer Bhandari</td>
+<td>Dalveer Bhandari</td>
+</tr>
+<tr>
+<td>“Paradise Papers” recently leaked are related to which matter?</td>
+<td>Secret Documents of RAW</td>
+<td>Secret Documents of KGB</td>
+<td>Secret Documents of CIA</td>
+<td>Investments in Secret Tax Heavens</td>
+<td>Investments in Secret Tax Heavens</td>
+</tr>
+<tr>
+<td>Which countries have declared their intentions to leave UNESCO?</td>
+<td>USA and Israel</td>
+<td>Syria and Iran</td>
+<td>China and Pakistan</td>
+<td>Korea and Japan</td>
+<td>USA and Israel</td>
+</tr>
+<tr>
+<td>Which organization won the Nobel Peace Prize in 2017?</td>
+<td>UNESCO</td>
+<td>WHO</td>
+<td>ICAN</td>
+<td>ILO</td>
+<td>ICAN</td>
+</tr>
+<tr>
+<td>Ninth Summit of BRICS in 2017 was held in which country?</td>
+<td>Russia</td>
+<td>China</td>
+<td>India</td>
+<td>South Africa</td>
+<td>China</td>
+</tr>
+<tr>
+<td>How many countries are members of SAARC?</td>
+<td>8</td>
+<td>7</td>
+<td>6</td>
+<td>5</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Who is Secretary General of UN?</td>
+<td>Kofi Annan</td>
+<td>Antonio Guterres</td>
+<td>Ban-Ki-Moon</td>
+<td>Perez de Cuellar</td>
+<td>Antonio Guterres</td>
+</tr>
+<tr>
+<td>At present who is Prime Minister of Pakistan?</td>
+<td>Shahid Khaqan Abbbasi</td>
+<td>Nawaz Sharif</td>
+<td>Benezir Bhutto</td>
+<td>Asif Ali Zardari</td>
+<td>Shahid Khaqan Abbbasi</td>
+</tr>
+<tr>
+<td>In the 73rd constitutional amendment, 1/3 seats for the women are reserved in Panchayats under which Article?</td>
+<td>Article 243A</td>
+<td>Article 243B</td>
+<td>Article 243C</td>
+<td>Article 243D</td>
+<td>Article 243D</td>
+</tr>
+<tr>
+<td>‘Electoral College’ For the election of President of India consists of:</td>
+<td>All the members of Parliament</td>
+<td>All the members of State Legislative Assemblies</td>
+<td>All the elected members of both Houses of Parliament and elected members of State Legislative Assemblies</td>
+<td>None of the Above</td>
+<td>All the elected members of both Houses of Parliament and elected members of State Legislative Assemblies</td>
+</tr>
+<tr>
+<td>Which Article of Indian Constitution empowers President all the executive powers?</td>
+<td>Article 52</td>
+<td>Article 53</td>
+<td>Article 54</td>
+<td>Article 55</td>
+<td>Article 53</td>
+</tr>
+<tr>
+<td>Who gives the final verdict on Money Bill?</td>
+<td>President</td>
+<td>Prime Minister</td>
+<td>Supreme Court</td>
+<td>Speaker of Lok Sabha</td>
+<td>Speaker of Lok Sabha</td>
+</tr>
+<tr>
+<td>Within which time period an ordinance promulgated by the President be laid down before both the houses of Parliament after their reassemble?</td>
+<td>Six months</td>
+<td>Six days</td>
+<td>Six weeks</td>
+<td>Two months</td>
+<td>Six weeks</td>
+</tr>
+<tr>
+<td>How many writs can Supreme Court of India issue under Article 32?</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Idea of Directive Principles of State Policy has been borrowed from Constitution of which country?</td>
+<td>Britain</td>
+<td>Ireland</td>
+<td>South Africa</td>
+<td>France</td>
+<td>Ireland</td>
+</tr>
+<tr>
+<td>Which Article of Indian Constitution provides the right to form a political party?</td>
+<td>Article 132</td>
+<td>Article 111</td>
+<td>Article 32</td>
+<td>None of the above</td>
+<td>None of the above</td>
+</tr>
+<tr>
+<td>Article 1 of the Constitution describes India as :</td>
+<td>A Union of States</td>
+<td>A Quasi-Federal State</td>
+<td>A Federation</td>
+<td>A Confederation</td>
+<td>A Union of States</td>
+</tr>
+<tr>
+<td>What was the total strength of Lok Sabha on 31st December 2017?</td>
+<td>538</td>
+<td>537</td>
+<td>542</td>
+<td>550</td>
+<td>538</td>
+</tr>
+<tr>
+<td>The First Factory Act was passed in the time of :</td>
+<td>Lord Canning</td>
+<td>John Lawrence</td>
+<td>Lord Ripon</td>
+<td>Lord Dufferin</td>
+<td>Lord Ripon</td>
+</tr>
+<tr>
+<td>Who of the following does not represent the Nationalist critique of the Colonial Economy?</td>
+<td>R. Bhandarkar</td>
+<td>Dadabhai Naoroji</td>
+<td>R.C. Dutt</td>
+<td>Sachidanand Sinha</td>
+<td>R. Bhandarkar</td>
+</tr>
+<tr>
+<td>Who presided over the Congress Session in 1905 which supported the Swadeshi and Boycott Movement for Bengal?</td>
+<td>B. G. Tilak</td>
+<td>Lajpat Rai</td>
+<td>C. R. Das</td>
+<td>G. K. Gokhale</td>
+<td>G. K. Gokhale</td>
+</tr>
+<tr>
+<td>What name was given to the headquarters of Ghadr paper in the U.S.A.?</td>
+<td>Deshantar Ashram</td>
+<td>Yugantar Ashram</td>
+<td>Ghadr Ashram</td>
+<td>Bharat Ashram</td>
+<td>Yugantar Ashram</td>
+</tr>
+<tr>
+<td>When was the first walk-out organized in the Legislative Council during the colonial period?</td>
+<td>1901</td>
+<td>1902</td>
+<td>1904</td>
+<td>1905</td>
+<td>1901</td>
+</tr>
+<tr>
+<td>Curzon-Wylie was killed in London by:</td>
+<td>Rash Behari Bose</td>
+<td>Ajit Sing</td>
+<td>Madan Lal Dhingra</td>
+<td>Khudi Ram Bose</td>
+<td>Madan Lal Dhingra</td>
+</tr>
+<tr>
+<td>Of the following, who was not the member of the Interim Government in 1946?</td>
+<td>Sardar V.B. Patel</td>
+<td>Jagjivan Ram</td>
+<td>Baldev Singh</td>
+<td>B. R. Ambedkar</td>
+<td>B. R. Ambedkar</td>
+</tr>
+<tr>
+<td>The Rehnumai Mazdeyasan Sabha represented the spirit of Reform among:</td>
+<td>The Anglo-Indians</td>
+<td>The Parsees</td>
+<td>The Muslims</td>
+<td>The Hindus</td>
+<td>The Parsees</td>
+</tr>
+<tr>
+<td>Of the following persons, who is not matched correctly with his newspaper?</td>
+<td>Dadabhai Naoroji-Indian Mirror</td>
+<td>G. Tilak-Kesari</td>
+<td>Sisir Kumar Ghose – Amrit Bazar Patrika</td>
+<td>k. Gokhale – Sudharak</td>
+<td>Dadabhai Naoroji-Indian Mirror</td>
+</tr>
+<tr>
+<td>From which Art Abanindranath Tagore did not seek inspiration?</td>
+<td>Mughal</td>
+<td>Ajanta</td>
+<td>Rajput</td>
+<td>New Zealand</td>
+<td>New Zealand</td>
+</tr>
+<tr>
+<td>Who founded several Vedanta societies in the West?</td>
+<td>Har Dyal</td>
+<td>Gopal Hari Deshmukh</td>
+<td>Vivekananda</td>
+<td>Raja Ram Mohan Roy</td>
+<td>Vivekananda</td>
+</tr>
+<tr>
+<td>The Deoband Programme of the study was reduced to :</td>
+<td>9 years</td>
+<td>6 years</td>
+<td>8 years</td>
+<td>5 years</td>
+<td>6 years</td>
+</tr>
+<tr>
+<td>The first Director-General of the Archaeological Survey of India was:</td>
+<td>Cunningham</td>
+<td>Wheeler</td>
+<td>Sir John Marshal</td>
+<td>Daya Ram Sahni</td>
+<td>Cunningham</td>
+</tr>
+<tr>
+<td>Which of the following, opened a co-education school in Moga (PUNJAB) in 1899 for improving the position of women?</td>
+<td>The Arya Samaj</td>
+<td>The Prarthana Samaj</td>
+<td>Singh Sabha</td>
+<td>The Dev Samaj</td>
+<td>The Dev Samaj</td>
+</tr>
+<tr>
+<td>The first book written by Mahatma Gandhi was:</td>
+<td>The Collected Works of Mahatma Gandhi</td>
+<td>The Story of My Experiments with Truth</td>
+<td>Hind Swaraj</td>
+<td>The Harijan</td>
+<td>Hind Swaraj</td>
+</tr>
+<tr>
+<td>Which of the following Social Reforms was not considered essential by Gandhi for the transformation of society?</td>
+<td>Hindu-Muslim unity</td>
+<td>Abolition of Varna system</td>
+<td>Swadeshi</td>
+<td>Abolition of Untouchability</td>
+<td>Abolition of Varna system</td>
+</tr>
+<tr>
+<td>The Dandi March was started by Gandhi on:</td>
+<td>March 10, 1930</td>
+<td>March 15, 1930</td>
+<td>March 21, 1930</td>
+<td>March 12, 1930</td>
+<td>March 12, 1930</td>
+</tr>
+<tr>
+<td>In which special session of the Congress, Gandhi presented for approval of his idea of Satyagraha against the government?</td>
+<td>Bombay, 1918</td>
+<td>Ahmedabad, 1921</td>
+<td>Calcutta, 1920</td>
+<td>Amritsar, 1919</td>
+<td>Calcutta, 1920</td>
+</tr>
+<tr>
+<td>When did Gandhi realize that his struggle in India was not based on the Non-violence of the Brave?</td>
+<td>1947</td>
+<td>1948</td>
+<td>1942</td>
+<td>1940</td>
+<td>1947</td>
+</tr>
+<tr>
+<td>Which is not the feature of Gandhi’s theory of Trusteeship?</td>
+<td>Change of capitalist society into an equalitarian one</td>
+<td>Fixation of upper and lower limits of incomes</td>
+<td>The character of production to be determined by social necessity</td>
+<td>The government should be made the owner of the lives of people</td>
+<td>The government should be made the owner of the lives of people</td>
+</tr>
+<tr>
+<td>Which of the following rates is not determined by RBI?</td>
+<td>Bank rate</td>
+<td>SLR</td>
+<td>PLR</td>
+<td>CRR</td>
+<td>PLR</td>
+</tr>
+<tr>
+<td>Who is known as the father of ‘White Revolution’ in India?</td>
+<td>S. Swaminathan</td>
+<td>P. Pal</td>
+<td>N. Bahl</td>
+<td>V. Kurien</td>
+<td>V. Kurien</td>
+</tr>
+<tr>
+<td>When did the Kisan Credit Cart Scheme for the farmers start in India?</td>
+<td>1995-96</td>
+<td>1998-99</td>
+<td>2005-06</td>
+<td>2007-08</td>
+<td>1998-99</td>
+</tr>
+<tr>
+<td>The concept of Small Scale Industries (SSI) was brought to force by the:</td>
+<td>Industrial Policy Resolution,1948</td>
+<td>Industrial Policy Resolution,1956</td>
+<td>Industrial Policy Statement,1977</td>
+<td>None of the above</td>
+<td>Industrial Policy Resolution,1956</td>
+</tr>
+<tr>
+<td>Who recommends the MSP and issue prices?</td>
+<td>Ministry of Agriculture</td>
+<td>Commission for Agricultural Cost and Prices</td>
+<td>NITI Aayog</td>
+<td>NABARD</td>
+<td>Commission for Agricultural Cost and Prices</td>
+</tr>
+<tr>
+<td>India economy is a type of :</td>
+<td>Capitalist economy</td>
+<td>Socialist economy</td>
+<td>Mixed economy</td>
+<td>Monopolistic economy</td>
+<td>Mixed economy</td>
+</tr>
+<tr>
+<td>When has the Population Policy been implemented?</td>
+<td>15th February 2000</td>
+<td>15th February 2001</td>
+<td>15th February 2002</td>
+<td>14th February 2000</td>
+<td>15th February 2000</td>
+</tr>
+<tr>
+<td>What is the basic objective of Public Distribution System in India?</td>
+<td>To control the market price</td>
+<td>To ensure food security for poor</td>
+<td>To control black marketing</td>
+<td>To encourage export</td>
+<td>To ensure food security for poor</td>
+</tr>
+<tr>
+<td>The second green revolution is focused on:</td>
+<td>Agriculture stability</td>
+<td>Environment issues</td>
+<td>Reducing rural imbalances</td>
+<td>All of the above</td>
+<td>All of the above</td>
+</tr>
+<tr>
+<td>Which sector of Indian economy has disguised unemployment?</td>
+<td>Agriculture</td>
+<td>Industry</td>
+<td>Services</td>
+<td>Manufacturing</td>
+<td>Agriculture</td>
+</tr>
+<tr>
+<td>One horsepower of electric power is equal to :</td>
+<td>746 Watts</td>
+<td>1000 Watts</td>
+<td>375 Watts</td>
+<td>220 Watts</td>
+<td>746 Watts</td>
+</tr>
+<tr>
+<td>When a bar magnet suspended freely with a thread, it will always rest along :</td>
+<td>South-North direction</td>
+<td>North-South direction</td>
+<td>East-West direction</td>
+<td>West-East direction</td>
+<td>North-South direction</td>
+</tr>
+<tr>
+<td>The main constituent of the compressed natural gas (CNG) is :</td>
+<td>Butane</td>
+<td>Methane</td>
+<td>Ethane</td>
+<td>Propane</td>
+<td>Methane</td>
+</tr>
+<tr>
+<td>The short-sightedness (myopia) defect in human eyes can be corrected by using :</td>
+<td>Plano-concave lens</td>
+<td>Plano-convex lens</td>
+<td>Concave lens</td>
+<td>Convex lens</td>
+<td>Concave lens</td>
+</tr>
+<tr>
+<td>Which one is responsible for the souring of milk?</td>
+<td>Citric Acid</td>
+<td>Lactic Acid</td>
+<td>Acetic Acid</td>
+<td>Formic Acid</td>
+<td>Lactic Acid</td>
+</tr>
+<tr>
+<td>Which of the following is the most abundant metal in Earth’s crust?</td>
+<td>Iron</td>
+<td>Aluminium</td>
+<td>Calcium</td>
+<td>Sodium</td>
+<td>Aluminium</td>
+</tr>
+<tr>
+<td>Atoms of different elements with different atomic numbers, which have same mass number are known as :</td>
+<td>Isomers</td>
+<td>Isotopes</td>
+<td>Isochors</td>
+<td>Isobars</td>
+<td>Isobars</td>
+</tr>
+<tr>
+<td>Which of the following pollutants is the major cause of respiratory diseases?</td>
+<td>Nitrogen oxide</td>
+<td>Carbon monoxide</td>
+<td>Suspended fine particles</td>
+<td>Volatile organic compounds</td>
+<td>Suspended fine particles</td>
+</tr>
+<tr>
+<td>Who discovered the nucleus in the cell?</td>
+<td>Robert Hooke</td>
+<td>Robert Brown</td>
+<td>Purkinje</td>
+<td>Leeuwenhoek</td>
+<td>Robert Brown</td>
+</tr>
+<tr>
+<td>Bats search their prey and fly in dark night by emitting and detecting reflections of :</td>
+<td>Infrasonic waves</td>
+<td>Ultrasonic waves</td>
+<td>Ultraviolet waves</td>
+<td>Infrared waves</td>
+<td>Ultrasonic waves</td>
+</tr>
+<tr>
+<td>Trisul peak lies in the state of :</td>
+<td>Himachal Pradesh</td>
+<td>Odisha</td>
+<td>Uttarakhand</td>
+<td>Uttar Pradesh</td>
+<td>Uttarakhand</td>
+</tr>
+<tr>
+<td>Which one of the following is not a biosphere reserve?</td>
+<td>Manas</td>
+<td>Nokrek</td>
+<td>Pachmarhi</td>
+<td>Ranthambore</td>
+<td>Ranthambore</td>
+</tr>
+<tr>
+<td>Ramsar Convention was held in :</td>
+<td>Afghanistan</td>
+<td>Iraq</td>
+<td>Iran</td>
+<td>Turkey</td>
+<td>Iran</td>
+</tr>
+<tr>
+<td>Karewa soil is found in the state of :</td>
+<td>Arunachal Pradesh</td>
+<td>Jammu &amp; Kashmir</td>
+<td>Uttarakhand</td>
+<td>Rajasthan</td>
+<td>Jammu &amp; Kashmir</td>
+</tr>
+<tr>
+<td>Which one of the following is not a deciduous tree?</td>
+<td>Arjun</td>
+<td>Gurjan</td>
+<td>Palas</td>
+<td>Sal</td>
+<td>Gurjan</td>
+</tr>
+<tr>
+<td>Which one of the following rivers flows from east to west?</td>
+<td>Dibang</td>
+<td>Lohit</td>
+<td>Manas</td>
+<td>Subansiri</td>
+<td>Lohit</td>
+</tr>
+<tr>
+<td>Which one of the following separates the Andaman from the Nicobar Islands?</td>
+<td>8 degree Channel</td>
+<td>9 degree Channel</td>
+<td>10 degree Channel</td>
+<td>11 degree Channel</td>
+<td>10 degree Channel</td>
+</tr>
+<tr>
+<td>Which one of the following is not correctly matched ?            DAM: RIVER</td>
+<td>Dulhasti ——–    Chenab</td>
+<td>Rihand Dam ——-Ken</td>
+<td>Pachet Dam ——-Damodar</td>
+<td>Tehri Dam—— Bhagirathi</td>
+<td>Rihand Dam ——-Ken</td>
+</tr>
+<tr>
+<td>Asian Disaster Preparedness Centre is at :</td>
+<td>Bangkok</td>
+<td>Kerala</td>
+<td>Surat</td>
+<td>None of the above</td>
+<td>Bangkok</td>
+</tr>
+<tr>
+<td>How much of India’s coastline is vulnerable to Disasters?</td>
+<td>5340 km</td>
+<td>5400 km</td>
+<td>6200 km</td>
+<td>5700 km</td>
+<td>5700 km</td>
+</tr>
+<tr>
+<td>Which President of India wrote the book ‘The Turbulent Years, 1980-1996’?</td>
+<td>Pranab Mukherjee</td>
+<td>P.J. Abdul Kalam</td>
+<td>R. Narayanan</td>
+<td>Ram Nath Kovind</td>
+<td>Pranab Mukherjee</td>
+</tr>
+<tr>
+<td>Who was first President of B.J.P. when it was established on 6th April 1980 ?</td>
+<td>Atal Behari Vajpayee</td>
+<td>Shyma Prasad Mukherji</td>
+<td>L.K. Advani</td>
+<td>Murli Monohar Joshi</td>
+<td>Atal Behari Vajpayee</td>
+</tr>
+<tr>
+<td>Among the following who has been the Commanders-in-Chief of Indian Army after independence?</td>
+<td>General Sir Rob Lockhart</td>
+<td>General Sir Roy Bucher</td>
+<td>General (Later Field Marshal) K.M. Cariappa</td>
+<td>All of the above</td>
+<td>All of the above</td>
+</tr>
+<tr>
+<td>In the Commonwealth Games at Gold Coast 2018 in which sport all the participants of India got medals?</td>
+<td>Shooting</td>
+<td>Wrestling</td>
+<td>Badminton</td>
+<td>Weight-lifting</td>
+<td>Wrestling</td>
+</tr>
+<tr>
+<td>Who won the “Khel Ratna Award” in 2017?</td>
+<td>Devendra Jhajharia</td>
+<td>Sardar Singh</td>
+<td>Devendra Jhajharia &amp; Sardar Singh Both</td>
+<td>Dipa Karmakar</td>
+<td>Devendra Jhajharia &amp; Sardar Singh Both</td>
+</tr>
+<tr>
+<td>Who was the Chief Guest in the 68th Republic Day parade on 26th January 2017?</td>
+<td>Prince of Abu Dhabi</td>
+<td>President of Iran</td>
+<td>President of Russia</td>
+<td>President of the USA</td>
+<td>Prince of Abu Dhabi</td>
+</tr>
+<tr>
+<td>Who has been recently appointed as Head of BCCI by the Hon’ble Supreme Court?</td>
+<td>Anurag Thakur</td>
+<td>Sharad Pawar</td>
+<td>Vinod Rai</td>
+<td>Rajiv Shukla</td>
+<td>Vinod Rai</td>
+</tr>
+<tr>
+<td>Which opposition candidate contested Presidential election against ruling party’s candidate Ram Nath Kovind?</td>
+<td>Meira Kumar</td>
+<td>Meira Nair</td>
+<td>Rajmohan Gandhi</td>
+<td>Renuka Choudhary</td>
+<td>Meira Kumar</td>
+</tr>
+<tr>
+<td>Which Indian city has been declared as World’s Heritage City by UNESCO in 2017?</td>
+<td>Jaipur</td>
+<td>Varanasi</td>
+<td>Ahmedabad</td>
+<td>Lucknow</td>
+<td>Ahmedabad</td>
+</tr>
+<tr>
+<td>Who is appointed as Chief of Film Censor Board in India in 2017?</td>
+<td>Prasoon Joshi</td>
+<td>Anupam Kher</td>
+<td>Sharmila Tagore</td>
+<td>Babul Supriyo</td>
+<td>Prasoon Joshi</td>
+</tr>
+</tbody>
+</table>
+<div class="note-footer">
+<div class="backlinks">
+<h2>Backlinks</h2>
+<ul>
+	<li><a class="backlink" href="/Z_MCQ/Z_MCQ.html">z_mcq</a></li>
+</ul>
+</div>
+
+<div class="tags">
+
+</div>
+
+</div>
+<div class="graph requires_js ">
+    <div id="A16648692505469528295499671554608947541{level}" class="graph_div"></div>
+    
+    <div class="graph-button-row" style="display:flex;">
+        <button class="graph_button graph_show_button" id="B16648692505469528295499671554608947541{level}" level="{level}" note_temp_id="16648692505469528295499671554608947541" onclick="window.ObsHtmlGraph.run(this, '16648692505469528295499671554608947541', 'naib');">
+            Show Graph
+        </button>
+        <button class="graph_button graph_type_button" id="C16648692505469528295499671554608947541{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+            2D
+        </button>
+    </div>
+</div>
+
+<script type="module">
+    if (window.ObsHtmlGraph == undefined){
+        import('/obs.html/static/graph.js').then((Module) => {
+            window.ObsHtmlGraph = Module;
+            window.ObsHtmlGraph.arm_page(document.getElementById('page_holder'))
+        })
+    }
+</script>
+
+
+
+
+                                <!-- Disqus Comment -->
+                                <div id="disqus_thread"></div>
+                                <script id="dsq-count-scr" src="//himgk.disqus.com/count.js" async></script>
+                                <script>
+                                        (function () { // DON'T EDIT BELOW THIS LINE
+                                                var d = document,
+                                                        s = d.createElement('script');
+                                                s.src = 'https://himgk.disqus.com/embed.js';
+                                                s.setAttribute('data-timestamp', +new Date());
+                                                (d.head || d.body).appendChild(s);
+                                        })();
+                                </script>
+                                <noscript>Please enable JavaScript to view the <a
+                                                href="https://disqus.com/?ref_noscript">comments powered by
+                                                Disqus.</a></noscript>
+                                <br>
+                                <script src="/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+                                <html> <footer class="footer-distributed"> <div class="footer-right"> <a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-twitter"></a> </div> <div class="footer-left"> <p class="footer-links"> <a class="link-1" href="#">Home</a> <a href="#">About</a> <a href="#">Privacy Policy</a> <a href="#">Disclaimer</a> <a href="#">Contact</a> </p> <p>HimGK &copy; 2022</p> </div> </footer> </html>
+<link rel="stylesheet" href="/obs.html/static/custom.css" />
+
+                                <!-- end content -->
+                        </div>
+                        <div class="container_filler">
+                        </div>
+                        <!-- <div id="right_pane" class="right_pane active">
+                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                                <div id="right_pane_content" class="right_pane_content">
+                                        
+                                </div>
+                        </div> -->
+                </div>
+        </div>
+
+        <script>
+                function handle_toggle_side_bar(e) {
+                        let header;
+                        let pane;
+                        let target = e.target
+
+                        // switch out the navbar button click for a header click
+                        if (target.id == 'left_pane_toggle_nav') {
+                                target = document.getElementById('left_pane_fold_header')
+                        } else if (target.id == 'right_pane_toggle_nav') {
+                                target = document.getElementById('right_pane_fold_header')
+                        }
+
+                        // get header and pane
+                        if (target.classList.contains('fold_header')) {
+                                header = target;
+                                pane = target.parentElement;
+                        } else {
+                                pane = target;
+                                header = target.getElementsByClassName('fold_header')[0];
+                        }
+                        toggle_side_bar(pane, header, true)
+                        e.stopPropagation();
+                }
+
+                function handle_toggle_side_bar_button(e) {
+                        document.getElementById('menu_toggle_button').click()
+                        handle_toggle_side_bar(e);
+                }
+
+                function toggle_side_bar(pane, header, save) {
+                        let active = (pane.classList.contains('active'))
+                        if (active) {
+                                disable_side_bar(pane, header, save);
+                        } else {
+                                enable_side_bar(pane, header, save);
+                        }
+                }
+
+                function enable_side_bar(pane, header, save) {
+                        pane.classList.add('active');
+                        pane.removeEventListener('click', handle_toggle_side_bar);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save) {
+                                save_panel_folding_state(header, true)
+                        }
+                }
+
+                function disable_side_bar(pane, header, save) {
+                        pane.classList.remove('active');
+                        pane.addEventListener('click', handle_toggle_side_bar);
+                        header.removeEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save) {
+                                save_panel_folding_state(header, false)
+                        }
+                }
+
+                function set_correct_header_symbol(header) {
+                        let pane = header.parentElement;
+                        let symbol = [
+                                ['>', '<'],
+                                ['<', '>']
+                        ]
+                        symbol = symbol[Number(header.classList.contains('right_pane_fold_header'))][Number(pane
+                                .classList.contains('active'))];
+                        console.log(symbol);
+                        header.innerHTML = symbol
+                        return header;
+                }
+
+                function panel_folding_get_panel_name(header) {
+                        return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
+                }
+
+                function save_panel_folding_state(header, active) {
+                        localStorage.setItem('pane_folding_state_' + panel_folding_get_panel_name(header),
+                                Number(
+                                        active));
+                }
+
+                function load_panel_folding_state(panel_name) {
+                        val = localStorage.getItem('pane_folding_state_' + panel_name)
+                        if (!val) {
+                                return {
+                                        'exists': false,
+                                        'value': null
+                                }
+                        }
+                        return {
+                                'exists': true,
+                                'value': Boolean(Number(val))
+                        }
+                }
+
+                function set_pane_folding_start(left_header, right_header) {
+                        // small screen = closed
+                        let right_pane_enabled = true;
+                        let left_pane_enabled = true;
+                        let w = window.visualViewport.width
+                        if (w < 1000) {
+                                left_pane_enabled = false
+                        }
+                        if (w < 800) {
+                                right_pane_enabled = false
+                        }
+
+                        // get saved values if present
+                        let rval = load_panel_folding_state('right')
+                        if (rval['exists']) {
+                                right_pane_enabled = rval['value']
+                        }
+                        let lval = load_panel_folding_state('left')
+                        if (lval['exists']) {
+                                left_pane_enabled = lval['value']
+                        }
+
+                        // default = enabled, so we only need to disable
+                        if (!left_pane_enabled) {
+                                disable_side_bar(document.getElementById('left_pane'), document.getElementById(
+                                        'left_pane_fold_header'))
+                        }
+                        if (!right_pane_enabled) {
+                                disable_side_bar(document.getElementById('right_pane'), document.getElementById(
+                                        'right_pane_fold_header'))
+                        }
+                }
+
+                function init_pane_folding(header) {
+                        set_correct_header_symbol(header);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                }
+
+
+                set_pane_folding_start()
+                init_pane_folding(document.getElementById('left_pane_fold_header'));
+                init_pane_folding(document.getElementById('right_pane_fold_header'));
+
+                document.getElementById('left_pane_toggle_nav').addEventListener('click',
+                        handle_toggle_side_bar_button);
+                document.getElementById('right_pane_toggle_nav').addEventListener('click',
+                        handle_toggle_side_bar_button);
+        </script>
+        <script type="text/javascript">
+                document.oncontextmenu = new Function("return false");
+                const disableselect = (e) => {
+                        return false
+                }
+                document.onselectstart = disableselect
+                document.onmousedown = disableselect
+        </script>
+
+</body>
+
+</html>
